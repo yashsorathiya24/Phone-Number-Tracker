@@ -1,0 +1,38 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+
+# Swift Package Manager
+.build/
+Packages/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# macOS
+.DS_Store
+
+# Xcode Archives
+*.xcarchive
+
+# User-specific Xcode files
+*.moved-aside
+*.xccheckout
+
+# Secrets
+.env
+*.pem
+*.p12
+GoogleService-Info.plist
