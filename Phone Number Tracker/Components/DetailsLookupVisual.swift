@@ -26,9 +26,8 @@ struct DetailsLookupVisual: View {
             .shadow(color: .black.opacity(0.12), radius: 16, x: 0, y: 10)
 
             AnimatedHandPointer()
-                .scaleEffect(0.92)
-                .padding(.top, 158)
-                .padding(.trailing, 10)
+                .padding(.top, 176)
+                .padding(.trailing, 58)
                 .allowsHitTesting(false)
         }
         .padding(.horizontal, 16)
