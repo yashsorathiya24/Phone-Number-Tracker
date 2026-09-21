@@ -7,75 +7,81 @@ import SwiftUI
 
 struct DetailsLookupVisual: View {
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
+        ZStack(alignment: .topTrailing) {
             VStack(alignment: .leading, spacing: 0) {
-                HStack(spacing: 16) {
-                    PhoneBadgeIcon()
-                        .frame(width: 32, height: 44)
-
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("+1 (415) 555-0132")
-                            .font(.system(size: 21, weight: .heavy, design: .rounded))
-                            .foregroundStyle(Color.primaryText)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.72)
-
-                        Text("Number details")
-                            .font(.system(size: 15, weight: .medium, design: .rounded))
-                            .foregroundStyle(Color(red: 116 / 255, green: 121 / 255, blue: 139 / 255))
-                    }
-                }
-                .padding(.bottom, 14)
+                header
+                    .padding(.bottom, 14)
 
                 DetailLine(label: "Country", value: "United States")
                 DetailLine(label: "Operator", value: "T-Mobile")
                 DetailLine(label: "Region", value: "California, US")
-
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("Line type")
-                        .font(.system(size: 15, weight: .medium, design: .rounded))
-                        .foregroundStyle(Color(red: 162 / 255, green: 166 / 255, blue: 174 / 255))
-                    Text("Mobile")
-                        .font(.system(size: 20, weight: .heavy, design: .rounded))
-                        .foregroundStyle(Color(red: 162 / 255, green: 166 / 255, blue: 174 / 255))
-                }
+                DetailLine(label: "Line type", value: "Mobile", isMuted: true, showsDivider: false)
             }
-            .padding(18)
+            .padding(.horizontal, 18)
+            .padding(.top, 16)
+            .padding(.bottom, 16)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color(red: 247 / 255, green: 249 / 255, blue: 253 / 255))
-            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(Color(red: 224 / 255, green: 228 / 255, blue: 237 / 255), lineWidth: 1.5)
-            }
-            .shadow(color: .black.opacity(0.08), radius: 10, x: 0, y: 8)
+            .background(Color(red: 247 / 255, green: 248 / 255, blue: 251 / 255))
+            .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+            .shadow(color: .black.opacity(0.12), radius: 16, x: 0, y: 10)
 
             AnimatedHandPointer()
-                .scaleEffect(0.88)
-                .offset(x: -42, y: -45)
+                .scaleEffect(0.92)
+                .padding(.top, 158)
+                .padding(.trailing, 10)
+                .allowsHitTesting(false)
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 16)
+    }
+
+    private var header: some View {
+        HStack(alignment: .top, spacing: 14) {
+            PhoneBadgeIcon()
+                .padding(.top, 1)
+
+            VStack(alignment: .leading, spacing: 6) {
+                Text("+1 (415) 555-0132")
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundStyle(Color(red: 22 / 255, green: 22 / 255, blue: 26 / 255))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.72)
+
+                Text("Number details")
+                    .font(.system(size: 13, weight: .regular))
+                    .foregroundStyle(Color(red: 148 / 255, green: 152 / 255, blue: 162 / 255))
+            }
+        }
     }
 }
 
 private struct DetailLine: View {
     let label: String
     let value: String
+    var isMuted: Bool = false
+    var showsDivider: Bool = true
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(label)
-                .font(.system(size: 15, weight: .medium, design: .rounded))
-                .foregroundStyle(Color(red: 105 / 255, green: 111 / 255, blue: 130 / 255))
-            Text(value)
-                .font(.system(size: 20, weight: .heavy, design: .rounded))
-                .foregroundStyle(Color.primaryText)
-                .padding(.bottom, 4)
+                .font(.system(size: 13, weight: .regular))
+                .foregroundStyle(Color(red: 158 / 255, green: 162 / 255, blue: 170 / 255))
 
-            Rectangle()
-                .fill(Color(red: 228 / 255, green: 232 / 255, blue: 238 / 255))
-                .frame(height: 1)
-                .padding(.bottom, 8)
+            Text(value)
+                .font(.system(size: 18, weight: .bold))
+                .foregroundStyle(
+                    isMuted
+                        ? Color(red: 168 / 255, green: 172 / 255, blue: 180 / 255)
+                        : Color(red: 22 / 255, green: 22 / 255, blue: 26 / 255)
+                )
+                .padding(.top, 1)
+                .padding(.bottom, showsDivider ? 10 : 0)
+
+            if showsDivider {
+                Rectangle()
+                    .fill(Color(red: 230 / 255, green: 232 / 255, blue: 237 / 255))
+                    .frame(height: 1)
+                    .padding(.bottom, 10)
+            }
         }
     }
 }

@@ -35,6 +35,11 @@ struct ContentView: View {
         }
         .animation(.easeInOut(duration: 0.35), value: stage)
         .task {
+            if ProcessInfo.processInfo.arguments.contains("-skipToOnboarding") {
+                selectedLanguage = "English"
+                stage = .onboarding
+                return
+            }
             await runLaunchSequence()
         }
     }

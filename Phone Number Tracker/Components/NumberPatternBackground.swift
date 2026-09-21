@@ -20,18 +20,20 @@ struct NumberPatternBackground: View {
             VStack(spacing: 5) {
                 ForEach(0..<46, id: \.self) { index in
                     Text(rows[index % rows.count])
-                        .font(.system(size: 18, weight: .medium, design: .rounded))
-                        .foregroundStyle(Color(red: 219 / 255, green: 225 / 255, blue: 235 / 255).opacity(0.55))
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(Color(red: 216 / 255, green: 222 / 255, blue: 232 / 255).opacity(0.7))
                         .lineLimit(1)
+                        .minimumScaleFactor(0.55)
                 }
             }
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, alignment: .top)
             .mask(
                 LinearGradient(
                     stops: [
                         .init(color: .black, location: 0),
-                        .init(color: .black.opacity(0.8), location: 0.42),
-                        .init(color: .clear, location: 0.72)
+                        .init(color: .black.opacity(0.9), location: 0.5),
+                        .init(color: .black.opacity(0.4), location: 0.78),
+                        .init(color: .clear, location: 0.95)
                     ],
                     startPoint: .top,
                     endPoint: .bottom

@@ -31,9 +31,10 @@ struct OnboardingScreen: View {
                 ForEach(Array(pages.enumerated()), id: \.offset) { index, page in
                     OnboardingPageView(page: page, controls: AnyView(onboardingControls))
                         .tag(index)
-                    }
+                }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
+            .ignoresSafeArea(edges: .bottom)
         }
     }
 
@@ -51,13 +52,13 @@ struct OnboardingScreen: View {
                 }
             } label: {
                 Text(selectedPage == pages.count - 1 ? copy.start : copy.next)
-                    .font(.system(size: 19, weight: .semibold, design: .rounded))
-                    .foregroundStyle(Color.primaryText)
-                    .padding(.horizontal, 22)
-                    .frame(height: 34)
+                    .font(.system(size: 16, weight: .regular))
+                    .foregroundStyle(Color(red: 28 / 255, green: 28 / 255, blue: 32 / 255))
+                    .padding(.horizontal, 20)
+                    .frame(height: 32)
                     .overlay {
                         Capsule()
-                            .stroke(Color.primaryText.opacity(0.8), lineWidth: 1.8)
+                            .stroke(Color(red: 32 / 255, green: 32 / 255, blue: 36 / 255), lineWidth: 1.15)
                     }
             }
             .buttonStyle(.plain)

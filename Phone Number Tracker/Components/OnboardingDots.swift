@@ -10,11 +10,11 @@ struct OnboardingDots: View {
     let pageCount: Int
 
     var body: some View {
-        HStack(spacing: 6) {
+        HStack(spacing: 5) {
             ForEach(0..<pageCount, id: \.self) { index in
                 Capsule()
-                    .fill(index == currentPage ? Color.trackerBlue : Color(red: 225 / 255, green: 229 / 255, blue: 234 / 255))
-                    .frame(width: index == currentPage ? 29 : 6, height: 5)
+                    .fill(index == currentPage ? Color.trackerBlue : Color(red: 210 / 255, green: 214 / 255, blue: 220 / 255))
+                    .frame(width: index == currentPage ? 26 : 6, height: 5)
             }
         }
     }
