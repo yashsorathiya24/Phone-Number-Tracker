@@ -7,6 +7,7 @@ import SwiftUI
 
 struct OnboardingScreen: View {
     let language: String
+    var onFinish: () -> Void = {}
 
     @State private var selectedPage = 0
 
@@ -49,6 +50,8 @@ struct OnboardingScreen: View {
                     withAnimation(.easeInOut(duration: 0.25)) {
                         selectedPage += 1
                     }
+                } else {
+                    onFinish()
                 }
             } label: {
                 Text(selectedPage == pages.count - 1 ? copy.start : copy.next)

@@ -9,4 +9,6 @@ enum LaunchStage {
     case adLoading
     case language
     case onboarding
+    case proPlan
+    case home
 }
