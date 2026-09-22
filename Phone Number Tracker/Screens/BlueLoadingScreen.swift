@@ -6,6 +6,8 @@
 import SwiftUI
 
 struct BlueLoadingScreen: View {
+    @State private var progress: CGFloat = 0
+
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -34,8 +36,8 @@ struct BlueLoadingScreen: View {
                     Spacer()
 
                     VStack(spacing: 19) {
-                        LoadingBar()
-                            .frame(width: proxy.size.width * 0.5, height: 8)
+                        LoadingBar(progress: progress)
+                            .frame(width: proxy.size.width * 0.6, height: 6)
 
                         Text("This action may contain ads")
                             .font(.system(size: proxy.size.width * 0.038, weight: .semibold, design: .rounded))
@@ -44,6 +46,11 @@ struct BlueLoadingScreen: View {
                     .padding(.bottom, max(proxy.safeAreaInsets.bottom + 66, 88))
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+        }
+        .onAppear {
+            withAnimation(.linear(duration: 2.2)) {
+                progress = 1.0
             }
         }
     }

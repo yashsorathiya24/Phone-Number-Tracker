@@ -305,10 +305,10 @@ private struct Slide0View: View {
             VStack(spacing: 0) {
                 Spacer().frame(height: 60)
 
-                HStack(alignment: .center, spacing: 20) {
+                HStack(alignment: .center, spacing: 14) {
                     // Crown illustration
                     Image(systemName: "crown.fill")
-                        .font(.system(size: 96))
+                        .font(.system(size: 80))
                         .foregroundStyle(
                             LinearGradient(
                                 colors: [
@@ -321,19 +321,22 @@ private struct Slide0View: View {
                         )
                         .shadow(color: Color.black.opacity(0.18), radius: 8, x: 0, y: 4)
 
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: 6) {
                         Text("Ad-Free\nExperience")
-                            .font(.system(size: 26, weight: .heavy, design: .rounded))
+                            .font(.system(size: 22, weight: .heavy, design: .rounded))
                             .foregroundStyle(.white)
                             .lineSpacing(2)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.85)
 
                         Text("Enjoy seamless tracking without\nannoying interruptions")
                             .font(.system(size: 13, weight: .regular, design: .rounded))
                             .foregroundStyle(Color.white.opacity(0.88))
                             .lineSpacing(2)
+                            .minimumScaleFactor(0.85)
                     }
                 }
-                .padding(.horizontal, 24)
+                .padding(.horizontal, 20)
 
                 Spacer()
 
@@ -365,28 +368,31 @@ private struct Slide1View: View {
             VStack(spacing: 0) {
                 Spacer().frame(height: 60)
 
-                HStack(alignment: .center, spacing: 20) {
+                HStack(alignment: .center, spacing: 14) {
                     // GPS icon
                     Image("ic_gpstool")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 110, height: 110)
-                        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                        .frame(width: 88, height: 88)
+                        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
                         .shadow(color: Color.black.opacity(0.22), radius: 10, x: 0, y: 5)
 
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: 6) {
                         Text("All Premium Tools\nUnlocked")
-                            .font(.system(size: 24, weight: .heavy, design: .rounded))
+                            .font(.system(size: 21, weight: .heavy, design: .rounded))
                             .foregroundStyle(.white)
                             .lineSpacing(2)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.85)
 
                         Text("GPS tools, contacts, and nearby\nplaces at your fingertips")
                             .font(.system(size: 13, weight: .regular, design: .rounded))
                             .foregroundStyle(Color.white.opacity(0.88))
                             .lineSpacing(2)
+                            .minimumScaleFactor(0.85)
                     }
                 }
-                .padding(.horizontal, 24)
+                .padding(.horizontal, 20)
 
                 Spacer()
 
@@ -417,27 +423,30 @@ private struct Slide2View: View {
             VStack(spacing: 0) {
                 Spacer().frame(height: 60)
 
-                HStack(alignment: .center, spacing: 20) {
+                HStack(alignment: .center, spacing: 14) {
                     // Locator icon
                     Image("ic_locator")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 110, height: 110)
+                        .frame(width: 88, height: 88)
                         .shadow(color: Color.black.opacity(0.22), radius: 10, x: 0, y: 5)
 
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: 6) {
                         Text("Track Any\nNumber")
-                            .font(.system(size: 26, weight: .heavy, design: .rounded))
+                            .font(.system(size: 22, weight: .heavy, design: .rounded))
                             .foregroundStyle(.white)
                             .lineSpacing(2)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.85)
 
                         Text("Locate phone numbers\nworldwide with premium accuracy")
                             .font(.system(size: 13, weight: .regular, design: .rounded))
                             .foregroundStyle(Color.white.opacity(0.88))
                             .lineSpacing(2)
+                            .minimumScaleFactor(0.85)
                     }
                 }
-                .padding(.horizontal, 24)
+                .padding(.horizontal, 20)
 
                 Spacer()
 

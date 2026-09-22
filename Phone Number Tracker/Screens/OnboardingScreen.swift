@@ -26,7 +26,25 @@ struct OnboardingScreen: View {
 
     var body: some View {
         ZStack {
-            NumberPatternBackground()
+            Color.white.ignoresSafeArea()
+
+            Image("img_number_bg")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+
+            LinearGradient(
+                stops: [
+                    .init(color: .clear, location: 0.0),
+                    .init(color: .white.opacity(0.25), location: 0.38),
+                    .init(color: .white.opacity(0.80), location: 0.58),
+                    .init(color: .white.opacity(0.94), location: 0.78),
+                    .init(color: .white.opacity(0.97), location: 1.0)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
 
             TabView(selection: $selectedPage) {
                 ForEach(Array(pages.enumerated()), id: \.offset) { index, page in
@@ -55,13 +73,13 @@ struct OnboardingScreen: View {
                 }
             } label: {
                 Text(selectedPage == pages.count - 1 ? copy.start : copy.next)
-                    .font(.system(size: 16, weight: .regular))
+                    .font(.system(size: 16, weight: .semibold, design: .rounded))
                     .foregroundStyle(Color(red: 28 / 255, green: 28 / 255, blue: 32 / 255))
-                    .padding(.horizontal, 20)
-                    .frame(height: 32)
+                    .padding(.horizontal, 22)
+                    .frame(height: 36)
                     .overlay {
                         Capsule()
-                            .stroke(Color(red: 32 / 255, green: 32 / 255, blue: 36 / 255), lineWidth: 1.15)
+                            .stroke(Color(red: 35 / 255, green: 35 / 255, blue: 40 / 255), lineWidth: 1.2)
                     }
             }
             .buttonStyle(.plain)

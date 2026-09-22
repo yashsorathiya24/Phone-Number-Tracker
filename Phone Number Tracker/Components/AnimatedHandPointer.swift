@@ -18,46 +18,45 @@ struct AnimatedHandPointer: View {
             ZStack(alignment: .topLeading) {
                 SwipeMotionLines()
                     .frame(width: 42, height: 26)
-                    .offset(x: 50 + (26 - value.x) * 0.7, y: 0)
+                    .offset(x: 36 + value.x, y: 4 + value.y)
                     .opacity(value.trail)
 
                 hand
                     .offset(x: value.x, y: value.y)
                     .rotationEffect(.degrees(16 + value.rotation), anchor: UnitPoint(x: 0.28, y: 0.10))
             }
-            .frame(width: 70, height: 74, alignment: .topLeading)
+            .frame(width: 78, height: 74, alignment: .topLeading)
         } keyframes: { _ in
             KeyframeTrack(\.x) {
-                LinearKeyframe(0, duration: 0.75)
-                CubicKeyframe(26, duration: 0.30)
-                LinearKeyframe(26, duration: 0.08)
-                CubicKeyframe(0, duration: 0.62)
+                LinearKeyframe(0, duration: 0.70)
+                CubicKeyframe(28, duration: 0.35)
+                LinearKeyframe(28, duration: 0.10)
+                CubicKeyframe(0, duration: 0.55)
                 LinearKeyframe(0, duration: 0.55)
             }
 
             KeyframeTrack(\.y) {
-                LinearKeyframe(0, duration: 0.75)
-                CubicKeyframe(-5, duration: 0.30)
-                LinearKeyframe(-5, duration: 0.08)
-                CubicKeyframe(0, duration: 0.62)
+                LinearKeyframe(0, duration: 0.70)
+                CubicKeyframe(-4, duration: 0.35)
+                LinearKeyframe(-4, duration: 0.10)
+                CubicKeyframe(0, duration: 0.55)
                 LinearKeyframe(0, duration: 0.55)
             }
 
             KeyframeTrack(\.rotation) {
-                LinearKeyframe(0, duration: 0.75)
-                CubicKeyframe(8, duration: 0.30)
-                LinearKeyframe(8, duration: 0.08)
-                CubicKeyframe(0, duration: 0.62)
+                LinearKeyframe(0, duration: 0.70)
+                CubicKeyframe(6, duration: 0.35)
+                LinearKeyframe(6, duration: 0.10)
+                CubicKeyframe(0, duration: 0.55)
                 LinearKeyframe(0, duration: 0.55)
             }
 
             KeyframeTrack(\.trail) {
-                LinearKeyframe(0, duration: 0.86)
-                CubicKeyframe(1, duration: 0.16)
-                LinearKeyframe(1, duration: 0.10)
-                CubicKeyframe(0.3, duration: 0.28)
-                CubicKeyframe(0, duration: 0.22)
-                LinearKeyframe(0, duration: 0.68)
+                LinearKeyframe(0, duration: 0.70)
+                CubicKeyframe(1.0, duration: 0.15)
+                LinearKeyframe(1.0, duration: 0.20)
+                CubicKeyframe(0.0, duration: 0.20)
+                LinearKeyframe(0, duration: 1.00)
             }
         }
     }

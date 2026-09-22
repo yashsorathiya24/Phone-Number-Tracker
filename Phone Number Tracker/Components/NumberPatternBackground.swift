@@ -17,13 +17,13 @@ struct NumberPatternBackground: View {
         ZStack(alignment: .top) {
             Color.white.ignoresSafeArea()
 
-            VStack(spacing: 5) {
-                ForEach(0..<46, id: \.self) { index in
+            VStack(spacing: 7) {
+                ForEach(0..<50, id: \.self) { index in
                     Text(rows[index % rows.count])
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(Color(red: 216 / 255, green: 222 / 255, blue: 232 / 255).opacity(0.7))
+                        .font(.system(size: 15, weight: .medium))
+                        .foregroundStyle(Color(red: 200 / 255, green: 210 / 255, blue: 228 / 255).opacity(0.75))
                         .lineLimit(1)
-                        .minimumScaleFactor(0.55)
+                        .minimumScaleFactor(0.5)
                 }
             }
             .frame(maxWidth: .infinity, alignment: .top)
@@ -31,9 +31,10 @@ struct NumberPatternBackground: View {
                 LinearGradient(
                     stops: [
                         .init(color: .black, location: 0),
-                        .init(color: .black.opacity(0.9), location: 0.5),
-                        .init(color: .black.opacity(0.4), location: 0.78),
-                        .init(color: .clear, location: 0.95)
+                        .init(color: .black.opacity(0.95), location: 0.25),
+                        .init(color: .black.opacity(0.7), location: 0.55),
+                        .init(color: .black.opacity(0.25), location: 0.80),
+                        .init(color: .clear, location: 1.0)
                     ],
                     startPoint: .top,
                     endPoint: .bottom

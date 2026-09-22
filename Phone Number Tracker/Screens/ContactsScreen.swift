@@ -6,7 +6,9 @@ struct ContactsScreen: View {
     @EnvironmentObject var favoritesManager: FavoritesManager
     @StateObject private var contactManager = ContactManager()
     @State private var searchText = ""
+    var onSelectNumber: (String) -> Void = { _ in }   // ← add this
 
+    
     var filteredContacts: [ContactManager.ContactInfo] {
         if searchText.isEmpty {
             return contactManager.contacts
@@ -156,35 +158,41 @@ struct ContactsScreen: View {
     }
 
     private func contactRow(contact: ContactManager.ContactInfo) -> some View {
-        HStack(spacing: 16) {
-            ZStack {
-                Circle()
-                    .fill(Color(red: 235 / 255, green: 240 / 255, blue: 255 / 255))
-                    .frame(width: 48, height: 48)
+        Button {
+            onSelectNumber(contact.phoneNumber)   // just report selection — don't dismiss here
+        } label: {
+            HStack(spacing: 16) {
+                ZStack {
+                    Circle()
+                        .fill(Color(red: 235 / 255, green: 240 / 255, blue: 255 / 255))
+                        .frame(width: 48, height: 48)
 
-                Image(systemName: "person.fill")
-                    .font(.system(size: 22))
-                    .foregroundStyle(Color(red: 45 / 255, green: 130 / 255, blue: 245 / 255))
+                    Image(systemName: "person.fill")
+                        .font(.system(size: 22))
+                        .foregroundStyle(Color(red: 45 / 255, green: 130 / 255, blue: 245 / 255))
+                }
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(contact.name)
+                        .font(.system(size: 18, weight: .bold, design: .rounded))
+                        .foregroundStyle(Color.black)
+
+                    Text(contact.phoneNumber)
+                        .font(.system(size: 14, design: .rounded))
+                        .foregroundStyle(Color.gray)
+                }
+
+                Spacer()
+
+                if favoritesManager.isFavorite(phoneNumber: contact.phoneNumber) {
+                    Image(systemName: "star.fill")
+                        .font(.system(size: 20))
+                        .foregroundStyle(Color(red: 45 / 255, green: 130 / 255, blue: 245 / 255))
+                }
             }
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text(contact.name)
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color.black)
-
-                Text(contact.phoneNumber)
-                    .font(.system(size: 14, design: .rounded))
-                    .foregroundStyle(Color.gray)
-            }
-
-            Spacer()
-            
-            if favoritesManager.isFavorite(phoneNumber: contact.phoneNumber) {
-                Image(systemName: "star.fill")
-                    .font(.system(size: 20))
-                    .foregroundStyle(Color(red: 45 / 255, green: 130 / 255, blue: 245 / 255))
-            }
+            .padding(.vertical, 12)
+            .contentShape(Rectangle())
         }
-        .padding(.vertical, 12)
+        .buttonStyle(.plain)
     }
 }

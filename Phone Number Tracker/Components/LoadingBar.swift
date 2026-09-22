@@ -6,24 +6,45 @@
 import SwiftUI
 
 struct LoadingBar: View {
-    @State private var offset: CGFloat = -1
+    var progress: CGFloat? = nil
+    @State private var internalProgress: CGFloat = 0
+
+    private var activeProgress: CGFloat {
+        progress ?? internalProgress
+    }
 
     var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .leading) {
+                // Background Track
                 Capsule()
-                    .fill(.white)
+                    .fill(Color.white.opacity(0.3))
 
+                // Progress Fill — cleanly contained within track bounds
                 Capsule()
-                    .fill(Color(red: 122 / 255, green: 94 / 255, blue: 165 / 255))
-                    .frame(width: proxy.size.width * 0.22)
-                    .offset(x: offset * proxy.size.width)
+                    .fill(
+                        LinearGradient(
+                            colors: [
+                                Color(red: 100 / 255, green: 80 / 255, blue: 160 / 255),
+                                Color(red: 160 / 255, green: 100 / 255, blue: 200 / 255)
+                            ],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .frame(width: proxy.size.width * max(0, min(1, activeProgress)))
             }
-            .task {
-                withAnimation(.linear(duration: 1.35).repeatForever(autoreverses: false)) {
-                    offset = 1.05
+            .clipShape(Capsule())
+            .onAppear {
+                if progress == nil {
+                    internalProgress = 0
+                    withAnimation(.linear(duration: 2.2)) {
+                        internalProgress = 1.0
+                    }
                 }
             }
         }
     }
 }
+
+

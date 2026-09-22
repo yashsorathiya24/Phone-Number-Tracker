@@ -5,6 +5,7 @@
 
 import SwiftUI
 import StoreKit
+import SafariServices
 
 struct SettingsScreen: View {
     var onBack: () -> Void
@@ -476,42 +477,27 @@ struct LanguageSelectionSheet: View {
     }
 }
 
+struct SafariView: UIViewControllerRepresentable {
+    let url: URL
+
+    func makeUIViewController(context: Context) -> SFSafariViewController {
+        let config = SFSafariViewController.Configuration()
+        config.entersReaderIfAvailable = false
+        let vc = SFSafariViewController(url: url, configuration: config)
+        vc.preferredControlTintColor = UIColor(red: 45/255, green: 130/255, blue: 245/255, alpha: 1)
+        return vc
+    }
+
+    func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {}
+}
+
 struct PrivacyPolicySheet: View {
     @Environment(\.dismiss) private var dismiss
+    private let privacyURL = URL(string: "https://phonelocator.live/phone-locator-privacy-policy/")!
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 14) {
-                    Text("Privacy & Security")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-
-                    Text("Phone Number Tracker values your privacy. We do not store personal contact lists on remote servers or share private telemetry. All searches and lookup queries are performed securely.")
-                        .font(.system(size: 15, design: .rounded))
-                        .foregroundStyle(.secondary)
-                        .lineSpacing(4)
-
-                    Text("Data Usage")
-                        .font(.system(size: 18, weight: .bold, design: .rounded))
-                        .padding(.top, 10)
-
-                    Text("Location lookups use international dialing prefixes and region code mappings to identify country and carrier metadata without tracking personal movements.")
-                        .font(.system(size: 15, design: .rounded))
-                        .foregroundStyle(.secondary)
-                        .lineSpacing(4)
-                }
-                .padding(20)
-            }
-            .navigationTitle("Privacy Policy")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Close") {
-                        dismiss()
-                    }
-                }
-            }
-        }
+        SafariView(url: privacyURL)
+            .ignoresSafeArea()
     }
 }
 

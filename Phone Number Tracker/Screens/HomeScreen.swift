@@ -12,7 +12,10 @@ struct HomeScreen: View {
     @State private var showContactsSheet = false
     @State private var showNearbySheet = false
     @State private var showGPSToolsSheet = false
+    @State private var pendingNumber: String? = nil
+    @State private var showLocator = false
 
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -44,7 +47,11 @@ struct HomeScreen: View {
                     .toolbar(.hidden, for: .navigationBar)
             }
             .navigationDestination(isPresented: $showContactsSheet) {
-                ContactsScreen()
+                ContactsScreen(onSelectNumber: { number in
+                                pendingNumber = number
+                                showLocator = true          // present locator right after
+                            })
+                
                     .toolbar(.hidden, for: .navigationBar)
             }
             .navigationDestination(isPresented: $showNearbySheet) {

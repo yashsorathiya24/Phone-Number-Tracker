@@ -14,7 +14,8 @@ struct PhoneLocatorScreen: View {
     @State private var isSearching = false
     @State private var showDetails = false
     @State private var searchedContactName: String? = nil
-    
+    var initialPhoneNumber: String? = nil               // ← add this
+
     // Map state for the background
     @State private var cameraPosition: MapCameraPosition = .region(MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 20.5937, longitude: 78.9629), // India as default
@@ -208,6 +209,10 @@ struct PhoneLocatorScreen: View {
                 contactManager.requestPermission()
             } else if contactManager.permissionStatus == .authorized {
                 contactManager.fetchContacts()
+            }
+            if let initial = initialPhoneNumber, phoneNumber.isEmpty {
+                phoneNumber = initial
+                startSearch()
             }
         }
         .navigationDestination(isPresented: $showDetails) {
