@@ -108,7 +108,7 @@ struct SpeedometerScreen: View {
                 .foregroundColor(Color(red: 45/255, green: 120/255, blue: 240/255))
                 .padding(.bottom, 20)
             
-            Text(locationManager.location == nil ? "Waiting for GPS signal..." : "GPS Active")
+            Text(LocalizedStringKey(locationManager.location == nil ? "Waiting for GPS signal..." : "GPS Active"))
                 .font(.system(size: 15, weight: .medium, design: .rounded))
                 .foregroundColor(.black)
             
@@ -127,7 +127,7 @@ struct SpeedometerScreen: View {
                     locationManager.stopUpdating()
                 }
             } label: {
-                Text(isRunning ? "Stop" : "Start")
+                Text(LocalizedStringKey(isRunning ? "Stop" : "Start"))
                     .font(.system(size: 20, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)

@@ -117,7 +117,7 @@ struct NearbyPlacesScreen: View {
                     .font(.system(size: 28))
                     .frame(width: 40, height: 40)
                 
-                Text(item.name)
+                Text(LocalizedStringKey(item.name))
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(Color.black.opacity(0.85))
                 

@@ -32,7 +32,7 @@ struct OnboardingPageView: View {
 
     private var textBlock: some View {
         VStack(spacing: 10) {
-            Text(page.title)
+            Text(LocalizedStringKey(page.title))
                 .font(.system(size: 32, weight: .bold))
                 .foregroundStyle(Color(red: 18 / 255, green: 18 / 255, blue: 22 / 255))
                 .multilineTextAlignment(.center)
@@ -41,7 +41,7 @@ struct OnboardingPageView: View {
                 .lineLimit(3)
                 .frame(maxWidth: 320)
 
-            Text(page.subtitle)
+            Text(LocalizedStringKey(page.subtitle))
                 .font(.system(size: 18, weight: .medium))
                 .foregroundStyle(Color(red: 88 / 255, green: 92 / 255, blue: 102 / 255))
                 .multilineTextAlignment(.center)

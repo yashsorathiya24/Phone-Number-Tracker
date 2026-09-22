@@ -10,6 +10,7 @@ import Combine
 
 struct ProPlanScreen: View {
     var onContinue: () -> Void
+    @Environment(\.dismiss) private var dismiss
 
     @State private var currentSlide = 0
     @State private var selectedPlan = 1  // 0=weekly, 1=yearly, 2=monthly
@@ -19,10 +20,12 @@ struct ProPlanScreen: View {
         ZStack(alignment: .top) {
             Color.white.ignoresSafeArea()
 
-            VStack(spacing: 0) {
-                // ── Scrolling Header Slides
-                headerCarousel
-                    .frame(height: 260)
+            ScrollView(.vertical, showsIndicators: false) {
+                ZStack(alignment: .topLeading) {
+                    VStack(spacing: 0) {
+                    // ── Scrolling Header Slides
+                    headerCarousel
+                        .frame(height: 270)
 
                 // ── White card body
                 VStack(spacing: 0) {
@@ -41,28 +44,48 @@ struct ProPlanScreen: View {
                     // Continue button
                     continueButton
                         .padding(.horizontal, 24)
-                        .padding(.bottom, 36)
+                        
+                    // Terms and Conditions text
+                    VStack(spacing: 8) {
+                        Text("Cancel Anytime on Google Play")
+                            .font(.system(size: 13, weight: .semibold, design: .rounded))
+                            .foregroundStyle(Color(red: 90 / 255, green: 95 / 255, blue: 105 / 255))
+                        
+                        Text("By ordering, you accept the Terms of Service and Privacy Policy. Subscription renews automatically unless canceled at least 24 hours before the current period ends.")
+                            .font(.system(size: 11, weight: .regular, design: .rounded))
+                            .foregroundStyle(Color.gray)
+                            .multilineTextAlignment(.center)
+                            .lineSpacing(2)
+                    }
+                    .padding(.horizontal, 24)
+                    .padding(.top, 16)
+                    .padding(.bottom, 36)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.white)
                 .clipShape(
                     RoundedRectangle(cornerRadius: 30, style: .continuous)
                 )
-                .ignoresSafeArea(edges: .bottom)
-                .offset(y: -30)
-            }
+                .padding(.top, -30)
+                    }
 
-            // X dismiss button
-            Button(action: onContinue) {
-                Image(systemName: "xmark")
-                    .font(.system(size: 17, weight: .semibold))
-                    .foregroundStyle(.white)
-                    .frame(width: 36, height: 36)
+                    // X dismiss button
+                    Button(action: {
+                        dismiss()
+                        onContinue()
+                    }) {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 17, weight: .bold))
+                            .foregroundStyle(.white)
+                            .padding(12)
+                            .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.top, 56)
+                    .padding(.leading, 12)
+                }
             }
-            .buttonStyle(.plain)
-            .padding(.top, 52)
-            .padding(.leading, 20)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .ignoresSafeArea(edges: .top)
         }
         .onReceive(autoScrollTimer) { _ in
             withAnimation(.easeInOut(duration: 0.55)) {
@@ -116,7 +139,7 @@ struct ProPlanScreen: View {
                     .font(.system(size: 12, weight: .bold))
                     .foregroundStyle(.white)
             }
-            Text(text)
+            Text(LocalizedStringKey(text))
                 .font(.system(size: 16, weight: .semibold, design: .rounded))
                 .foregroundStyle(Color(red: 22 / 255, green: 24 / 255, blue: 30 / 255))
         }
@@ -194,13 +217,13 @@ struct ProPlanScreen: View {
                 VStack(spacing: 4) {
                     Spacer().frame(height: badge != nil ? 18 : 8)
 
-                    Text(title)
+                    Text(LocalizedStringKey(title))
                         .font(.system(size: isCenter ? 15 : 14, weight: .bold, design: .rounded))
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                         .foregroundStyle(isCenter ? Color(red: 40 / 255, green: 120 / 255, blue: 235 / 255) : Color(red: 22 / 255, green: 24 / 255, blue: 30 / 255))
 
-                    Text(subtitle)
+                    Text(LocalizedStringKey(subtitle))
                         .font(.system(size: 10.5, weight: .regular, design: .rounded))
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
@@ -209,12 +232,12 @@ struct ProPlanScreen: View {
 
                     Spacer()
 
-                    Text(price)
+                    Text(LocalizedStringKey(price))
                         .font(.system(size: isCenter ? 24 : 20, weight: .heavy, design: .rounded))
                         .foregroundStyle(isCenter ? Color(red: 40 / 255, green: 120 / 255, blue: 235 / 255) : Color(red: 22 / 255, green: 24 / 255, blue: 30 / 255))
 
                     if let orig = originalPrice {
-                        Text(orig)
+                        Text(LocalizedStringKey(orig))
                             .font(.system(size: 12, design: .rounded))
                             .foregroundStyle(Color.gray)
                             .strikethrough(true, color: .gray)
@@ -239,8 +262,8 @@ struct ProPlanScreen: View {
 
                 // Badge pill at top
                 if let badge = badge {
-                    Text(badge)
-                        .font(.system(size: 11, weight: .bold, design: .rounded))
+                    Text(LocalizedStringKey(badge))
+                        .font(.system(size: 9.5, weight: .heavy, design: .rounded))
                         .foregroundStyle(.white)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
@@ -303,7 +326,7 @@ private struct Slide0View: View {
             .ignoresSafeArea(edges: .top)
 
             VStack(spacing: 0) {
-                Spacer().frame(height: 60)
+                Spacer().frame(height: 76)
 
                 HStack(alignment: .center, spacing: 14) {
                     // Crown illustration
@@ -366,7 +389,7 @@ private struct Slide1View: View {
             .ignoresSafeArea(edges: .top)
 
             VStack(spacing: 0) {
-                Spacer().frame(height: 60)
+                Spacer().frame(height: 76)
 
                 HStack(alignment: .center, spacing: 14) {
                     // GPS icon
@@ -421,7 +444,7 @@ private struct Slide2View: View {
             .ignoresSafeArea(edges: .top)
 
             VStack(spacing: 0) {
-                Spacer().frame(height: 60)
+                Spacer().frame(height: 76)
 
                 HStack(alignment: .center, spacing: 14) {
                     // Locator icon

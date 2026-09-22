@@ -1,0 +1,189 @@
+/* Translations for ru */
+
+"Language" = "Язык";
+
+"Chinese" = "Китайский";
+
+"Spanish" = "Испанский";
+
+"French" = "Французский";
+
+"English" = "Английский";
+
+"Russian" = "Русский";
+
+"Hindi" = "Хинди";
+
+"Urdu" = "Урду";
+
+"Portuguese (Brazil)" = "Португальский (Бразилия)";
+
+"German" = "Немецкий";
+
+"Japanese" = "Японский";
+
+"Turkish" = "Турецкий";
+
+"Vietnamese" = "Вьетнамский";
+
+"Czech" = "Чешский";
+
+"Phone Locator" = "Локатор телефона";
+
+"Pinpoint any phone number\non the map." = "Определите местоположение любого номера телефона\nна карте.";
+
+"Locate now" = "Найти сейчас";
+
+"Live caller location" = "Местоположение звонящего в реальном времени";
+
+"Recent lookups" = "Недавние поиски";
+
+"Saved in one place" = "Сохранено в одном месте";
+
+"Details" = "Подробности";
+
+"Number details" = "Сведения о номере";
+
+"Carrier" = "Оператор";
+
+"Unknown" = "Неизвестно";
+
+"Location" = "Местоположение";
+
+"Only Phone numbers starting with the proper country code and number format will have their information retrieved." = "Информация будет получена только для телефонных номеров с правильным кодом страны и форматом номера.";
+
+"OK" = "ОК";
+
+"Phone Number Tracker" = "Трекер телефонных номеров";
+
+"Locate any number worldwide" = "Найдите любой номер по всему миру";
+
+"This action may contain ads" = "Это действие может содержать рекламу";
+
+"Cancel Anytime on Google Play" = "Отменить подписку можно в любое время в Google Play";
+
+"By ordering, you accept the Terms of Service and Privacy Policy. Subscription renews automatically unless canceled at least 24 hours before the current period ends." = "Оформляя заказ, вы принимаете Условия использования и Политику конфиденциальности. Подписка продлевается автоматически, если не отменить её как минимум за 24 часа до окончания текущего периода.";
+
+"Most Popular" = "Самый популярный";
+
+"Continue" = "Продолжить";
+
+"Ad-Free\nExperience" = "Без рекламы\nи ограничений";
+
+"Enjoy seamless tracking without\nannoying interruptions" = "Наслаждайтесь удобным отслеживанием без\nнадоедливых прерываний";
+
+"All Premium Tools\nUnlocked" = "Все премиум-инструменты\nразблокированы";
+
+"GPS tools, contacts, and nearby\nplaces at your fingertips" = "GPS-инструменты, контакты и ближайшие\nместа всегда под рукой";
+
+"Track Any\nNumber" = "Отслеживайте любой\nномер";
+
+"Locate phone numbers\nworldwide with premium accuracy" = "Определяйте местоположение телефонных номеров\nпо всему миру с высокой точностью";
+
+"My Contacts" = "Мои контакты";
+
+"All your friends organized." = "Все ваши друзья удобно организованы.";
+
+"Contact permission is needed to look up saved names." = "Для поиска сохранённых имён необходимо разрешение на доступ к контактам.";
+
+"No laps yet" = "Пока нет кругов";
+
+"Start the timer and tap Lap to track intervals." = "Запустите таймер и нажмите «Круг», чтобы отслеживать интервалы.";
+
+"Lap %lld" = "Круг %lld";
+
+"Lap" = "Круг";
+
+"Reset" = "Сбросить";
+
+"COMPASS" = "КОМПАС";
+
+"MY LOCATION" = "МОЁ МЕСТОПОЛОЖЕНИЕ";
+
+"Fetching coordinates..." = "Получение координат...";
+
+"No area codes found for %@" = "Коды регионов для %@ не найдены";
+
+"Area Codes" = "Коды регионов";
+
+"Near By Places" = "Места поблизости";
+
+"Hi there" = "Привет";
+
+"Search worldwide numbers" = "Поиск номеров по всему миру";
+
+"Search" = "Поиск";
+
+"Weekly Plan" = "Недельный план";
+
+"Billed every week" = "Оплата еженедельно";
+
+"Yearly Plan" = "Годовой план";
+
+"Billed every year" = "Оплата ежегодно";
+
+"Monthly Plan" = "Месячный план";
+
+"Billed every month" = "Оплата ежемесячно";
+
+"50% OFF" = "СКИДКА 50%";
+
+"Share App" = "Поделиться приложением";
+
+"Privacy Policy" = "Политика конфиденциальности";
+
+"Rate Us" = "Оцените нас";
+
+"Feedback" = "Обратная связь";
+
+"Stopwatch" = "Секундомер";
+
+"GPS Tools" = "GPS-инструменты";
+
+"Upgrade to PRO" = "Перейти на PRO";
+
+"Remove ads and unlock all location" = "Удалите рекламу и разблокируйте все функции определения местоположения";
+
+"Settings" = "Настройки";
+
+"Track numbers and manage your\nfavorite tools" = "Отслеживайте номера и управляйте\nизбранными инструментами";
+
+"Quick tools" = "Быстрые инструменты";
+
+"My\nContacts" = "Мои\nконтакты";
+
+"Access\nyour saved\ncontacts." = "Получите доступ к\nсохранённым\nконтактам.";
+
+"Near By\nPlaces" = "Места\nпоблизости";
+
+"Find nearby\nservices\ninstantly." = "Мгновенно находите\nсервисы\nпоблизости.";
+
+"GPS\nTools" = "GPS-\nинструменты";
+
+"Compass,\nlevel, codes\n& more." = "Компас,\nуровень, коды\nи многое другое.";
+
+"Discover Phone\nNumber Details" = "Узнайте подробности\nтелефонного номера";
+
+"Find country, operator, and\nbasic location info for any\nphone number." = "Узнайте страну, оператора и\nосновную информацию о местоположении\nлюбого телефонного номера.";
+
+"Live Location & Call\nInfo" = "Местоположение в реальном времени\nи информация о звонке";
+
+"Identify caller location on map,\ncountry code, and network." = "Определите местоположение звонящего на карте,\nкод страны и сеть.";
+
+"Next" = "Далее";
+
+"Country" = "Страна";
+
+"Operator" = "Оператор";
+
+"Region" = "Регион";
+
+"Line type" = "Тип линии";
+
+"Country +1" = "Страна +1";
+
+"Network LTE" = "Сеть LTE";
+
+"Active now" = "Активен сейчас";
+
+"Start" = "Начать";

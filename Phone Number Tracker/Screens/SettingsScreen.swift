@@ -15,7 +15,7 @@ struct SettingsScreen: View {
     @State private var showPrivacyScreen = false
     @State private var showFeedbackSheet = false
     @State private var showShareSheet = false
-    @State private var selectedLanguage = "English"
+    @EnvironmentObject var languageManager: AppLanguageManager
 
     var body: some View {
         NavigationStack {
@@ -74,7 +74,7 @@ struct SettingsScreen: View {
             }
         }
         .navigationDestination(isPresented: $showLanguageScreen) {
-            LanguageScreen(selectedLanguage: $selectedLanguage) {
+            LanguageScreen(isFromSettings: true) {
                 showLanguageScreen = false
             }
             .navigationBarBackButtonHidden(true)
@@ -184,7 +184,7 @@ struct SettingsScreen: View {
 
     // MARK: - Reusable Settings Card
     private func settingsCard<Icon: View>(
-        title: String,
+        title: LocalizedStringKey,
         @ViewBuilder icon: () -> Icon,
         action: @escaping () -> Void
     ) -> some View {

@@ -91,7 +91,7 @@ struct HomeScreen: View {
                         .font(.system(size: 26))
                 }
 
-                Text("Track numbers and manage your favorite tools")
+                Text(LocalizedStringKey("Track numbers and manage your favorite tools"))
                     .font(.system(size: 14, weight: .medium, design: .rounded))
                     .foregroundStyle(Color(red: 130 / 255, green: 134 / 255, blue: 145 / 255))
                     .lineLimit(2)
@@ -272,6 +272,7 @@ struct GPSToolsSheet: View {
     @State private var showSpeedometer = false
     @State private var showStopwatch = false
     @State private var showLevelMeter = false
+    @State private var showAreaCodes = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -368,6 +369,9 @@ struct GPSToolsSheet: View {
         .navigationDestination(isPresented: $showLevelMeter) {
             LevelMeterScreen()
         }
+        .navigationDestination(isPresented: $showAreaCodes) {
+            AreaCodeScreen()
+        }
         .sheet(item: Binding<IdentifiableString?>(
             get: { selectedTool.map { IdentifiableString($0) } },
             set: { selectedTool = $0?.value }
@@ -386,6 +390,8 @@ struct GPSToolsSheet: View {
                 showStopwatch = true
             } else if title == "Level Meter" {
                 showLevelMeter = true
+            } else if title == "Area Codes" {
+                showAreaCodes = true
             } else {
                 selectedTool = title
             }
@@ -394,7 +400,7 @@ struct GPSToolsSheet: View {
                 icon
                     .frame(width: 32, height: 32)
 
-                Text(title)
+                Text(LocalizedStringKey(title))
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(Color.black.opacity(0.85))
 
@@ -447,10 +453,10 @@ struct GPSToolDetailSheet: View {
                     .padding(.top, 30)
 
                 VStack(spacing: 8) {
-                    Text(toolName)
+                    Text(LocalizedStringKey(toolName))
                         .font(.system(size: 24, weight: .bold, design: .rounded))
 
-                    Text(toolDescription)
+                    Text(LocalizedStringKey(toolDescription))
                         .font(.system(size: 15, design: .rounded))
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)

@@ -244,8 +244,8 @@ struct GPSTools3DIcon: View {
 // MARK: - Reusable Quick Tool Card
 struct QuickToolCard<IconView: View>: View {
     let icon: IconView
-    let title: String
-    let subtitle: String
+    let title: LocalizedStringKey
+    let subtitle: LocalizedStringKey
     let action: () -> Void
 
     var body: some View {

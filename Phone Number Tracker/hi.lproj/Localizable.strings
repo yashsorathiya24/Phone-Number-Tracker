@@ -1,0 +1,189 @@
+/* Translations for Hindi */
+
+"Language" = "भाषा";
+
+"Chinese" = "चीनी";
+
+"Spanish" = "स्पेनिश";
+
+"French" = "फ़्रेंच";
+
+"English" = "अंग्रेज़ी";
+
+"Russian" = "रूसी";
+
+"Hindi" = "हिंदी";
+
+"Urdu" = "उर्दू";
+
+"Portuguese (Brazil)" = "पुर्तगाली (ब्राज़ील)";
+
+"German" = "जर्मन";
+
+"Japanese" = "जापानी";
+
+"Turkish" = "तुर्की";
+
+"Vietnamese" = "वियतनामी";
+
+"Czech" = "चेक";
+
+"Phone Locator" = "फ़ोन लोकेटर";
+
+"Pinpoint any phone number\non the map." = "किसी भी फ़ोन नंबर को\nमानचित्र पर सटीक रूप से खोजें।";
+
+"Locate now" = "अभी खोजें";
+
+"Live caller location" = "लाइव कॉलर लोकेशन";
+
+"Recent lookups" = "हाल की खोजें";
+
+"Saved in one place" = "एक ही जगह पर सुरक्षित";
+
+"Details" = "विवरण";
+
+"Number details" = "नंबर का विवरण";
+
+"Carrier" = "नेटवर्क प्रदाता";
+
+"Unknown" = "अज्ञात";
+
+"Location" = "स्थान";
+
+"Only Phone numbers starting with the proper country code and number format will have their information retrieved." = "केवल सही देश कोड और नंबर प्रारूप से शुरू होने वाले फ़ोन नंबरों की जानकारी प्राप्त की जा सकेगी।";
+
+"OK" = "ठीक है";
+
+"Phone Number Tracker" = "फ़ोन नंबर ट्रैकर";
+
+"Locate any number worldwide" = "दुनिया भर में किसी भी नंबर का पता लगाएँ";
+
+"This action may contain ads" = "इस कार्रवाई में विज्ञापन हो सकते हैं";
+
+"Cancel Anytime on Google Play" = "Google Play पर कभी भी रद्द करें";
+
+"By ordering, you accept the Terms of Service and Privacy Policy. Subscription renews automatically unless canceled at least 24 hours before the current period ends." = "ऑर्डर देकर, आप सेवा की शर्तों और गोपनीयता नीति को स्वीकार करते हैं। सदस्यता स्वचालित रूप से नवीनीकृत हो जाती है, जब तक कि वर्तमान अवधि समाप्त होने से कम से कम 24 घंटे पहले इसे रद्द न किया जाए।";
+
+"Most Popular" = "सबसे लोकप्रिय";
+
+"Continue" = "जारी रखें";
+
+"Ad-Free\nExperience" = "विज्ञापन-मुक्त\nअनुभव";
+
+"Enjoy seamless tracking without\nannoying interruptions" = "बिना किसी परेशानी के निर्बाध ट्रैकिंग का आनंद लें";
+
+"All Premium Tools\nUnlocked" = "सभी प्रीमियम उपकरण\nअनलॉक किए गए";
+
+"GPS tools, contacts, and nearby\nplaces at your fingertips" = "GPS उपकरण, संपर्क और आस-पास के स्थान आपकी उंगलियों पर";
+
+"Track Any\nNumber" = "किसी भी नंबर\nको ट्रैक करें";
+
+"Locate phone numbers\nworldwide with premium accuracy" = "प्रीमियम सटीकता के साथ दुनिया भर में फ़ोन नंबरों का पता लगाएँ";
+
+"My Contacts" = "मेरे संपर्क";
+
+"All your friends organized." = "आपके सभी मित्र व्यवस्थित रूप से।";
+
+"Contact permission is needed to look up saved names." = "सहेजे गए नामों को देखने के लिए संपर्क अनुमति आवश्यक है।";
+
+"No laps yet" = "अभी तक कोई लैप नहीं";
+
+"Start the timer and tap Lap to track intervals." = "टाइमर शुरू करें और अंतराल ट्रैक करने के लिए लैप पर टैप करें।";
+
+"Lap %lld" = "लैप %lld";
+
+"Lap" = "लैप";
+
+"Reset" = "रीसेट";
+
+"COMPASS" = "कम्पास";
+
+"MY LOCATION" = "मेरा स्थान";
+
+"Fetching coordinates..." = "निर्देशांक प्राप्त किए जा रहे हैं...";
+
+"No area codes found for %@" = "%@ के लिए कोई एरिया कोड नहीं मिला";
+
+"Area Codes" = "एरिया कोड";
+
+"Near By Places" = "आसपास के स्थान";
+
+"Hi there" = "नमस्ते";
+
+"Search worldwide numbers" = "दुनिया भर के नंबर खोजें";
+
+"Search" = "खोजें";
+
+"Weekly Plan" = "साप्ताहिक योजना";
+
+"Billed every week" = "हर सप्ताह बिल किया जाएगा";
+
+"Yearly Plan" = "वार्षिक योजना";
+
+"Billed every year" = "हर साल बिल किया जाएगा";
+
+"Monthly Plan" = "मासिक योजना";
+
+"Billed every month" = "हर महीने बिल किया जाएगा";
+
+"50% OFF" = "50% की छूट";
+
+"Share App" = "ऐप साझा करें";
+
+"Privacy Policy" = "गोपनीयता नीति";
+
+"Rate Us" = "हमें रेट करें";
+
+"Feedback" = "प्रतिक्रिया";
+
+"Stopwatch" = "स्टॉपवॉच";
+
+"GPS Tools" = "GPS उपकरण";
+
+"Upgrade to PRO" = "PRO में अपग्रेड करें";
+
+"Remove ads and unlock all location" = "विज्ञापन हटाएं और सभी स्थान सुविधाएँ अनलॉक करें";
+
+"Settings" = "सेटिंग्स";
+
+"Track numbers and manage your\nfavorite tools" = "नंबर ट्रैक करें और अपने\nपसंदीदा टूल प्रबंधित करें";
+
+"Quick tools" = "त्वरित उपकरण";
+
+"My\nContacts" = "मेरे\nसंपर्क";
+
+"Access\nyour saved\ncontacts." = "अपने सहेजे गए\nसंपर्कों तक\nपहुंचें।";
+
+"Near By\nPlaces" = "आसपास के\nस्थान";
+
+"Find nearby\nservices\ninstantly." = "आस-पास की\nसेवाएँ\nतुरंत खोजें।";
+
+"GPS\nTools" = "GPS\nउपकरण";
+
+"Compass,\nlevel, codes\n& more." = "कम्पास,\nलेवल, कोड\nऔर बहुत कुछ।";
+
+"Discover Phone\nNumber Details" = "फ़ोन नंबर की\nजानकारी खोजें";
+
+"Find country, operator, and\nbasic location info for any\nphone number." = "किसी भी फ़ोन नंबर के लिए\nदेश, ऑपरेटर और\nबुनियादी स्थान की जानकारी पाएँ।";
+
+"Live Location & Call\nInfo" = "लाइव लोकेशन और\nकॉल की जानकारी";
+
+"Identify caller location on map,\ncountry code, and network." = "मानचित्र पर कॉलर का स्थान,\nदेश कोड और नेटवर्क\nपहचानें।";
+
+"Next" = "अगला";
+
+"Country" = "देश";
+
+"Operator" = "ऑपरेटर";
+
+"Region" = "क्षेत्र";
+
+"Line type" = "लाइन का प्रकार";
+
+"Country +1" = "देश +1";
+
+"Network LTE" = "नेटवर्क LTE";
+
+"Active now" = "अभी सक्रिय";
+
+"Start" = "शुरू करें";

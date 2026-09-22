@@ -6,26 +6,27 @@
 import SwiftUI
 
 struct LanguageScreen: View {
-    @Binding var selectedLanguage: String
+    @EnvironmentObject var languageManager: AppLanguageManager
+    var isFromSettings: Bool = false
     let onContinue: () -> Void
 
     @State private var showsConfirmCheck = false
     @State private var confirmTask: Task<Void, Never>?
 
-    private let languages = [
-        "Chinese",
-        "Spanish",
-        "French",
-        "English",
-        "Russian",
-        "Hindi",
-        "Urdu",
-        "Portuguese (Brazil)",
-        "German",
-        "Japanese",
-        "Turkish",
-        "Vietnamese",
-        "Czech"
+    private let languages: [(name: String, code: String)] = [
+        ("Chinese", "zh-Hans"),
+        ("Spanish", "es"),
+        ("French", "fr"),
+        ("English", "en"),
+        ("Russian", "ru"),
+        ("Hindi", "hi"),
+        ("Urdu", "ur"),
+        ("Portuguese (Brazil)", "pt-BR"),
+        ("German", "de"),
+        ("Japanese", "ja"),
+        ("Turkish", "tr"),
+        ("Vietnamese", "vi"),
+        ("Czech", "cs")
     ]
 
     var body: some View {
@@ -37,22 +38,31 @@ struct LanguageScreen: View {
 
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 9) {
-                        ForEach(languages, id: \.self) { language in
+                        ForEach(languages, id: \.code) { language in
                             LanguageRow(
-                                title: language,
-                                isSelected: selectedLanguage == language
+                                title: language.name,
+                                isSelected: languageManager.currentLanguage == language.code
                             ) {
-                                selectedLanguage = language
+                                languageManager.currentLanguage = language.code
                                 scheduleConfirmCheck()
                             }
                         }
                     }
                     .padding(.horizontal, 22)
-                    .padding(.bottom, 30)
+                    .padding(.bottom, 22)
                 }
             }
         }
         .animation(.easeInOut(duration: 0.2), value: showsConfirmCheck)
+        .onAppear {
+            if !languageManager.currentLanguage.isEmpty {
+                if isFromSettings {
+                    showsConfirmCheck = true
+                } else {
+                    scheduleConfirmCheck()
+                }
+            }
+        }
         .onDisappear {
             confirmTask?.cancel()
         }
@@ -79,7 +89,7 @@ struct LanguageScreen: View {
                 }
                 .frame(width: 36, height: 36)
             }
-            .disabled(!showsConfirmCheck || selectedLanguage.isEmpty)
+            .disabled(!showsConfirmCheck || languageManager.currentLanguage.isEmpty)
             .buttonStyle(.plain)
             .padding(.trailing, 15)
         }
@@ -89,6 +99,10 @@ struct LanguageScreen: View {
     }
 
     private func scheduleConfirmCheck() {
+        if isFromSettings {
+            showsConfirmCheck = true
+            return
+        }
         confirmTask?.cancel()
         showsConfirmCheck = false
         confirmTask = Task {

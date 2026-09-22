@@ -1,0 +1,189 @@
+/* Translations for Japanese */
+
+"Language" = "言語";
+
+"Chinese" = "中国語";
+
+"Spanish" = "スペイン語";
+
+"French" = "フランス語";
+
+"English" = "英語";
+
+"Russian" = "ロシア語";
+
+"Hindi" = "ヒンディー語";
+
+"Urdu" = "ウルドゥー語";
+
+"Portuguese (Brazil)" = "ポルトガル語（ブラジル）";
+
+"German" = "ドイツ語";
+
+"Japanese" = "日本語";
+
+"Turkish" = "トルコ語";
+
+"Vietnamese" = "ベトナム語";
+
+"Czech" = "チェコ語";
+
+"Phone Locator" = "電話番号ロケーター";
+
+"Pinpoint any phone number\non the map." = "あらゆる電話番号の位置を\n地図上で正確に特定します。";
+
+"Locate now" = "今すぐ検索";
+
+"Live caller location" = "発信者の現在地";
+
+"Recent lookups" = "最近の検索";
+
+"Saved in one place" = "1か所に保存";
+
+"Details" = "詳細";
+
+"Number details" = "番号の詳細";
+
+"Carrier" = "通信事業者";
+
+"Unknown" = "不明";
+
+"Location" = "位置情報";
+
+"Only Phone numbers starting with the proper country code and number format will have their information retrieved." = "正しい国番号と番号形式で始まる電話番号のみ、情報を取得できます。";
+
+"OK" = "OK";
+
+"Phone Number Tracker" = "電話番号トラッカー";
+
+"Locate any number worldwide" = "世界中のあらゆる番号を検索";
+
+"This action may contain ads" = "この操作には広告が含まれる場合があります";
+
+"Cancel Anytime on Google Play" = "Google Playでいつでもキャンセルできます";
+
+"By ordering, you accept the Terms of Service and Privacy Policy. Subscription renews automatically unless canceled at least 24 hours before the current period ends." = "ご注文いただくことで、利用規約とプライバシーポリシーに同意したものとみなされます。現在の期間終了の24時間前までにキャンセルしない限り、サブスクリプションは自動的に更新されます。";
+
+"Most Popular" = "最も人気";
+
+"Continue" = "続ける";
+
+"Ad-Free\nExperience" = "広告なしの\n体験";
+
+"Enjoy seamless tracking without\nannoying interruptions" = "煩わしい中断なしで\nスムーズな追跡をお楽しみください";
+
+"All Premium Tools\nUnlocked" = "すべてのプレミアムツールが\n利用可能";
+
+"GPS tools, contacts, and nearby\nplaces at your fingertips" = "GPSツール、連絡先、近くの場所を\nすぐに利用できます";
+
+"Track Any\nNumber" = "あらゆる\n番号を追跡";
+
+"Locate phone numbers\nworldwide with premium accuracy" = "プレミアム精度で\n世界中の電話番号を検索";
+
+"My Contacts" = "マイコンタクト";
+
+"All your friends organized." = "すべての友達を整理して管理できます。";
+
+"Contact permission is needed to look up saved names." = "保存された名前を検索するには、連絡先へのアクセス許可が必要です。";
+
+"No laps yet" = "まだラップはありません";
+
+"Start the timer and tap Lap to track intervals." = "タイマーを開始し、「ラップ」をタップしてインターバルを記録します。";
+
+"Lap %lld" = "ラップ %lld";
+
+"Lap" = "ラップ";
+
+"Reset" = "リセット";
+
+"COMPASS" = "コンパス";
+
+"MY LOCATION" = "現在地";
+
+"Fetching coordinates..." = "座標を取得しています...";
+
+"No area codes found for %@" = "%@ の市外局番が見つかりませんでした";
+
+"Area Codes" = "市外局番";
+
+"Near By Places" = "近くの場所";
+
+"Hi there" = "こんにちは";
+
+"Search worldwide numbers" = "世界中の番号を検索";
+
+"Search" = "検索";
+
+"Weekly Plan" = "週間プラン";
+
+"Billed every week" = "毎週請求";
+
+"Yearly Plan" = "年間プラン";
+
+"Billed every year" = "毎年請求";
+
+"Monthly Plan" = "月間プラン";
+
+"Billed every month" = "毎月請求";
+
+"50% OFF" = "50% OFF";
+
+"Share App" = "アプリを共有";
+
+"Privacy Policy" = "プライバシーポリシー";
+
+"Rate Us" = "評価する";
+
+"Feedback" = "フィードバック";
+
+"Stopwatch" = "ストップウォッチ";
+
+"GPS Tools" = "GPSツール";
+
+"Upgrade to PRO" = "PROにアップグレード";
+
+"Remove ads and unlock all location" = "広告を削除してすべての位置情報機能を解除";
+
+"Settings" = "設定";
+
+"Track numbers and manage your\nfavorite tools" = "番号を追跡し、お気に入りの\nツールを管理できます";
+
+"Quick tools" = "クイックツール";
+
+"My\nContacts" = "マイ\nコンタクト";
+
+"Access\nyour saved\ncontacts." = "保存した\n連絡先に\nアクセスできます。";
+
+"Near By\nPlaces" = "近くの\n場所";
+
+"Find nearby\nservices\ninstantly." = "近くの\nサービスを\nすぐに検索";
+
+"GPS\nTools" = "GPS\nツール";
+
+"Compass,\nlevel, codes\n& more." = "コンパス、\n水平器、コード\nなど";
+
+"Discover Phone\nNumber Details" = "電話番号の\n詳細を確認";
+
+"Find country, operator, and\nbasic location info for any\nphone number." = "電話番号の国、通信事業者、\n基本的な位置情報を\n確認できます。";
+
+"Live Location & Call\nInfo" = "現在地と通話\n情報";
+
+"Identify caller location on map,\ncountry code, and network." = "地図上で発信者の位置、\n国番号、ネットワークを\n確認できます。";
+
+"Next" = "次へ";
+
+"Country" = "国";
+
+"Operator" = "通信事業者";
+
+"Region" = "地域";
+
+"Line type" = "回線タイプ";
+
+"Country +1" = "国 +1";
+
+"Network LTE" = "ネットワーク LTE";
+
+"Active now" = "現在アクティブ";
+
+"Start" = "開始";

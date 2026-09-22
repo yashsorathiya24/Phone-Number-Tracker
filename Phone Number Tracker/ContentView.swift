@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var languageManager: AppLanguageManager
     @State private var stage: LaunchStage = .splash
-    @State private var selectedLanguage = ""
     @State private var showingSettings = false
     @StateObject private var favoritesManager = FavoritesManager()
 
@@ -26,12 +26,12 @@ struct ContentView: View {
                 AdLoadingScreen()
                     .transition(.opacity)
             case .language:
-                LanguageScreen(selectedLanguage: $selectedLanguage) {
+                LanguageScreen() {
                     stage = .onboarding
                 }
                 .transition(.opacity)
             case .onboarding:
-                OnboardingScreen(language: selectedLanguage) {
+                OnboardingScreen(language: languageManager.languageName(for: languageManager.currentLanguage)) {
                     stage = .proPlan
                 }
                 .transition(.opacity)
@@ -78,7 +78,6 @@ struct ContentView: View {
                 return
             }
             if ProcessInfo.processInfo.arguments.contains("-skipToOnboarding") {
-                selectedLanguage = "English"
                 stage = .onboarding
                 return
             }

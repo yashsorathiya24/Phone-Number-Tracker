@@ -1,0 +1,189 @@
+/* Translations for vi */
+
+"Language" = "Ngôn ngữ";
+
+"Chinese" = "Tiếng Trung";
+
+"Spanish" = "Tiếng Tây Ban Nha";
+
+"French" = "Tiếng Pháp";
+
+"English" = "Tiếng Anh";
+
+"Russian" = "Tiếng Nga";
+
+"Hindi" = "Tiếng Hindi";
+
+"Urdu" = "Tiếng Urdu";
+
+"Portuguese (Brazil)" = "Tiếng Bồ Đào Nha (Brazil)";
+
+"German" = "Tiếng Đức";
+
+"Japanese" = "Tiếng Nhật";
+
+"Turkish" = "Tiếng Thổ Nhĩ Kỳ";
+
+"Vietnamese" = "Tiếng Việt";
+
+"Czech" = "Tiếng Séc";
+
+"Phone Locator" = "Định vị điện thoại";
+
+"Pinpoint any phone number\non the map." = "Xác định chính xác vị trí của bất kỳ số điện thoại nào\ntrên bản đồ.";
+
+"Locate now" = "Định vị ngay";
+
+"Live caller location" = "Vị trí người gọi theo thời gian thực";
+
+"Recent lookups" = "Tìm kiếm gần đây";
+
+"Saved in one place" = "Được lưu tại một nơi";
+
+"Details" = "Chi tiết";
+
+"Number details" = "Chi tiết số điện thoại";
+
+"Carrier" = "Nhà mạng";
+
+"Unknown" = "Không xác định";
+
+"Location" = "Vị trí";
+
+"Only Phone numbers starting with the proper country code and number format will have their information retrieved." = "Chỉ những số điện thoại bắt đầu bằng mã quốc gia và đúng định dạng số mới có thể được truy xuất thông tin.";
+
+"OK" = "OK";
+
+"Phone Number Tracker" = "Trình theo dõi số điện thoại";
+
+"Locate any number worldwide" = "Định vị bất kỳ số nào trên toàn thế giới";
+
+"This action may contain ads" = "Thao tác này có thể chứa quảng cáo";
+
+"Cancel Anytime on Google Play" = "Hủy bất cứ lúc nào trên Google Play";
+
+"By ordering, you accept the Terms of Service and Privacy Policy. Subscription renews automatically unless canceled at least 24 hours before the current period ends." = "Khi đặt hàng, bạn đồng ý với Điều khoản dịch vụ và Chính sách quyền riêng tư. Gói đăng ký sẽ tự động gia hạn nếu không được hủy ít nhất 24 giờ trước khi thời hạn hiện tại kết thúc.";
+
+"Most Popular" = "Phổ biến nhất";
+
+"Continue" = "Tiếp tục";
+
+"Ad-Free\nExperience" = "Trải nghiệm\nkhông quảng cáo";
+
+"Enjoy seamless tracking without\nannoying interruptions" = "Tận hưởng trải nghiệm theo dõi liền mạch mà không bị\ngián đoạn bởi những quảng cáo khó chịu";
+
+"All Premium Tools\nUnlocked" = "Mở khóa tất cả\ncông cụ Premium";
+
+"GPS tools, contacts, and nearby\nplaces at your fingertips" = "Công cụ GPS, danh bạ và các địa điểm gần đây\nluôn trong tầm tay bạn";
+
+"Track Any\nNumber" = "Theo dõi bất kỳ\nsố nào";
+
+"Locate phone numbers\nworldwide with premium accuracy" = "Định vị số điện thoại\ntrên toàn thế giới với độ chính xác Premium";
+
+"My Contacts" = "Danh bạ của tôi";
+
+"All your friends organized." = "Tất cả bạn bè của bạn được sắp xếp gọn gàng.";
+
+"Contact permission is needed to look up saved names." = "Cần cấp quyền truy cập danh bạ để tra cứu các tên đã lưu.";
+
+"No laps yet" = "Chưa có vòng nào";
+
+"Start the timer and tap Lap to track intervals." = "Bắt đầu bộ hẹn giờ và nhấn Vòng để theo dõi các khoảng thời gian.";
+
+"Lap %lld" = "Vòng %lld";
+
+"Lap" = "Vòng";
+
+"Reset" = "Đặt lại";
+
+"COMPASS" = "LA BÀN";
+
+"MY LOCATION" = "VỊ TRÍ CỦA TÔI";
+
+"Fetching coordinates..." = "Đang lấy tọa độ...";
+
+"No area codes found for %@" = "Không tìm thấy mã vùng cho %@";
+
+"Area Codes" = "Mã vùng";
+
+"Near By Places" = "Địa điểm gần đây";
+
+"Hi there" = "Xin chào";
+
+"Search worldwide numbers" = "Tìm kiếm số điện thoại trên toàn thế giới";
+
+"Search" = "Tìm kiếm";
+
+"Weekly Plan" = "Gói hàng tuần";
+
+"Billed every week" = "Thanh toán hàng tuần";
+
+"Yearly Plan" = "Gói hàng năm";
+
+"Billed every year" = "Thanh toán hàng năm";
+
+"Monthly Plan" = "Gói hàng tháng";
+
+"Billed every month" = "Thanh toán hàng tháng";
+
+"50% OFF" = "GIẢM 50%";
+
+"Share App" = "Chia sẻ ứng dụng";
+
+"Privacy Policy" = "Chính sách quyền riêng tư";
+
+"Rate Us" = "Đánh giá chúng tôi";
+
+"Feedback" = "Phản hồi";
+
+"Stopwatch" = "Đồng hồ bấm giờ";
+
+"GPS Tools" = "Công cụ GPS";
+
+"Upgrade to PRO" = "Nâng cấp lên PRO";
+
+"Remove ads and unlock all location" = "Xóa quảng cáo và mở khóa tất cả tính năng định vị";
+
+"Settings" = "Cài đặt";
+
+"Track numbers and manage your\nfavorite tools" = "Theo dõi số điện thoại và quản lý\ncác công cụ yêu thích của bạn";
+
+"Quick tools" = "Công cụ nhanh";
+
+"My\nContacts" = "Danh bạ\ncủa tôi";
+
+"Access\nyour saved\ncontacts." = "Truy cập\ncác liên hệ\nđã lưu của bạn.";
+
+"Near By\nPlaces" = "Địa điểm\ngần đây";
+
+"Find nearby\nservices\ninstantly." = "Tìm các\ndịch vụ gần đây\nngay lập tức.";
+
+"GPS\nTools" = "Công cụ\nGPS";
+
+"Compass,\nlevel, codes\n& more." = "La bàn,\nthước cân bằng, mã vùng\nvà nhiều hơn nữa.";
+
+"Discover Phone\nNumber Details" = "Khám phá chi tiết\nsố điện thoại";
+
+"Find country, operator, and\nbasic location info for any\nphone number." = "Tìm quốc gia, nhà mạng và\nthông tin vị trí cơ bản của bất kỳ\nsố điện thoại nào.";
+
+"Live Location & Call\nInfo" = "Vị trí trực tiếp và\nthông tin cuộc gọi";
+
+"Identify caller location on map,\ncountry code, and network." = "Xác định vị trí người gọi trên bản đồ,\nmã quốc gia và mạng di động.";
+
+"Next" = "Tiếp theo";
+
+"Country" = "Quốc gia";
+
+"Operator" = "Nhà mạng";
+
+"Region" = "Khu vực";
+
+"Line type" = "Loại đường dây";
+
+"Country +1" = "Quốc gia +1";
+
+"Network LTE" = "Mạng LTE";
+
+"Active now" = "Đang hoạt động";
+
+"Start" = "Bắt đầu";

@@ -1,0 +1,189 @@
+/* Translations for Czech */
+
+"Language" = "Jazyk";
+
+"Chinese" = "Čínština";
+
+"Spanish" = "Španělština";
+
+"French" = "Francouzština";
+
+"English" = "Angličtina";
+
+"Russian" = "Ruština";
+
+"Hindi" = "Hindština";
+
+"Urdu" = "Urdština";
+
+"Portuguese (Brazil)" = "Portugalština (Brazílie)";
+
+"German" = "Němčina";
+
+"Japanese" = "Japonština";
+
+"Turkish" = "Turečtina";
+
+"Vietnamese" = "Vietnamština";
+
+"Czech" = "Čeština";
+
+"Phone Locator" = "Lokátor telefonu";
+
+"Pinpoint any phone number\non the map." = "Určete polohu jakéhokoli telefonního čísla\nna mapě.";
+
+"Locate now" = "Najít nyní";
+
+"Live caller location" = "Aktuální poloha volajícího";
+
+"Recent lookups" = "Nedávná vyhledávání";
+
+"Saved in one place" = "Uloženo na jednom místě";
+
+"Details" = "Podrobnosti";
+
+"Number details" = "Podrobnosti o čísle";
+
+"Carrier" = "Operátor";
+
+"Unknown" = "Neznámé";
+
+"Location" = "Poloha";
+
+"Only Phone numbers starting with the proper country code and number format will have their information retrieved." = "Informace lze získat pouze u telefonních čísel se správným kódem země a formátem čísla.";
+
+"OK" = "OK";
+
+"Phone Number Tracker" = "Sledování telefonního čísla";
+
+"Locate any number worldwide" = "Najděte jakékoli číslo na světě";
+
+"This action may contain ads" = "Tato akce může obsahovat reklamy";
+
+"Cancel Anytime on Google Play" = "Kdykoli zrušte na Google Play";
+
+"By ordering, you accept the Terms of Service and Privacy Policy. Subscription renews automatically unless canceled at least 24 hours before the current period ends." = "Objednávkou přijímáte podmínky služby a zásady ochrany osobních údajů. Předplatné se automaticky obnovuje, pokud není zrušeno nejméně 24 hodin před koncem aktuálního období.";
+
+"Most Popular" = "Nejoblíbenější";
+
+"Continue" = "Pokračovat";
+
+"Ad-Free\nExperience" = "Zážitek bez\nreklam";
+
+"Enjoy seamless tracking without\nannoying interruptions" = "Užijte si plynulé sledování bez\notravných přerušení";
+
+"All Premium Tools\nUnlocked" = "Všechny prémiové nástroje\nodemčeny";
+
+"GPS tools, contacts, and nearby\nplaces at your fingertips" = "GPS nástroje, kontakty a místa v okolí\nmáte na dosah ruky";
+
+"Track Any\nNumber" = "Sledujte jakékoli\nčíslo";
+
+"Locate phone numbers\nworldwide with premium accuracy" = "Vyhledávejte telefonní čísla\npo celém světě s prémiovou přesností";
+
+"My Contacts" = "Moje kontakty";
+
+"All your friends organized." = "Všichni vaši přátelé přehledně uspořádaní.";
+
+"Contact permission is needed to look up saved names." = "Pro vyhledávání uložených jmen je nutné povolení přístupu ke kontaktům.";
+
+"No laps yet" = "Zatím žádná kola";
+
+"Start the timer and tap Lap to track intervals." = "Spusťte časovač a klepnutím na Kolo sledujte intervaly.";
+
+"Lap %lld" = "Kolo %lld";
+
+"Lap" = "Kolo";
+
+"Reset" = "Resetovat";
+
+"COMPASS" = "KOMPAS";
+
+"MY LOCATION" = "MOJE POLOHA";
+
+"Fetching coordinates..." = "Načítání souřadnic...";
+
+"No area codes found for %@" = "Pro %@ nebyly nalezeny žádné směrové kódy";
+
+"Area Codes" = "Směrové kódy";
+
+"Near By Places" = "Místa v okolí";
+
+"Hi there" = "Ahoj";
+
+"Search worldwide numbers" = "Hledat čísla po celém světě";
+
+"Search" = "Hledat";
+
+"Weekly Plan" = "Týdenní plán";
+
+"Billed every week" = "Účtováno každý týden";
+
+"Yearly Plan" = "Roční plán";
+
+"Billed every year" = "Účtováno každý rok";
+
+"Monthly Plan" = "Měsíční plán";
+
+"Billed every month" = "Účtováno každý měsíc";
+
+"50% OFF" = "SLEVA 50 %";
+
+"Share App" = "Sdílet aplikaci";
+
+"Privacy Policy" = "Zásady ochrany osobních údajů";
+
+"Rate Us" = "Ohodnoťte nás";
+
+"Feedback" = "Zpětná vazba";
+
+"Stopwatch" = "Stopky";
+
+"GPS Tools" = "GPS nástroje";
+
+"Upgrade to PRO" = "Upgradovat na PRO";
+
+"Remove ads and unlock all location" = "Odstraňte reklamy a odemkněte všechny funkce určování polohy";
+
+"Settings" = "Nastavení";
+
+"Track numbers and manage your\nfavorite tools" = "Sledujte čísla a spravujte své\noblíbené nástroje";
+
+"Quick tools" = "Rychlé nástroje";
+
+"My\nContacts" = "Moje\nkontakty";
+
+"Access\nyour saved\ncontacts." = "Přistupujte ke svým\nuloženým\nkontaktům.";
+
+"Near By\nPlaces" = "Místa\nv okolí";
+
+"Find nearby\nservices\ninstantly." = "Okamžitě najděte\nslužby\nve svém okolí.";
+
+"GPS\nTools" = "GPS\nnástroje";
+
+"Compass,\nlevel, codes\n& more." = "Kompas,\nvodováha, kódy\na další.";
+
+"Discover Phone\nNumber Details" = "Objevte podrobnosti\no telefonním čísle";
+
+"Find country, operator, and\nbasic location info for any\nphone number." = "Zjistěte zemi, operátora a\nzákladní informace o poloze\njakéhokoli telefonního čísla.";
+
+"Live Location & Call\nInfo" = "Živá poloha a informace\no hovoru";
+
+"Identify caller location on map,\ncountry code, and network." = "Zjistěte polohu volajícího na mapě,\nkód země a síť.";
+
+"Next" = "Další";
+
+"Country" = "Země";
+
+"Operator" = "Operátor";
+
+"Region" = "Region";
+
+"Line type" = "Typ linky";
+
+"Country +1" = "Země +1";
+
+"Network LTE" = "Síť LTE";
+
+"Active now" = "Nyní aktivní";
+
+"Start" = "Spustit";

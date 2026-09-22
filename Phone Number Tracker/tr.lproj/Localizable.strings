@@ -1,0 +1,189 @@
+/* Translations for tr */
+
+"Language" = "Dil";
+
+"Chinese" = "Çince";
+
+"Spanish" = "İspanyolca";
+
+"French" = "Fransızca";
+
+"English" = "İngilizce";
+
+"Russian" = "Rusça";
+
+"Hindi" = "Hintçe";
+
+"Urdu" = "Urduca";
+
+"Portuguese (Brazil)" = "Portekizce (Brezilya)";
+
+"German" = "Almanca";
+
+"Japanese" = "Japonca";
+
+"Turkish" = "Türkçe";
+
+"Vietnamese" = "Vietnamca";
+
+"Czech" = "Çekçe";
+
+"Phone Locator" = "Telefon Bulucu";
+
+"Pinpoint any phone number\non the map." = "Herhangi bir telefon numarasını\nharitada tam olarak bulun.";
+
+"Locate now" = "Şimdi Bul";
+
+"Live caller location" = "Arayanın canlı konumu";
+
+"Recent lookups" = "Son aramalar";
+
+"Saved in one place" = "Tek bir yerde kaydedildi";
+
+"Details" = "Detaylar";
+
+"Number details" = "Numara detayları";
+
+"Carrier" = "Operatör";
+
+"Unknown" = "Bilinmiyor";
+
+"Location" = "Konum";
+
+"Only Phone numbers starting with the proper country code and number format will have their information retrieved." = "Yalnızca doğru ülke kodu ve numara formatıyla başlayan telefon numaralarının bilgileri alınabilir.";
+
+"OK" = "Tamam";
+
+"Phone Number Tracker" = "Telefon Numarası Takipçisi";
+
+"Locate any number worldwide" = "Dünyanın her yerindeki numaraları bulun";
+
+"This action may contain ads" = "Bu işlem reklam içerebilir";
+
+"Cancel Anytime on Google Play" = "Google Play'de istediğiniz zaman iptal edebilirsiniz";
+
+"By ordering, you accept the Terms of Service and Privacy Policy. Subscription renews automatically unless canceled at least 24 hours before the current period ends." = "Sipariş vererek Hizmet Şartlarını ve Gizlilik Politikası'nı kabul etmiş olursunuz. Mevcut dönem sona ermeden en az 24 saat önce iptal edilmediği sürece abonelik otomatik olarak yenilenir.";
+
+"Most Popular" = "En Popüler";
+
+"Continue" = "Devam Et";
+
+"Ad-Free\nExperience" = "Reklamsız\nDeneyim";
+
+"Enjoy seamless tracking without\nannoying interruptions" = "Rahatsız edici kesintiler olmadan\nkesintisiz takip deneyiminin keyfini çıkarın";
+
+"All Premium Tools\nUnlocked" = "Tüm Premium Araçlar\nKullanıma Açıldı";
+
+"GPS tools, contacts, and nearby\nplaces at your fingertips" = "GPS araçları, kişiler ve yakındaki\nyerler parmaklarınızın ucunda";
+
+"Track Any\nNumber" = "Herhangi Bir\nNumarayı Takip Edin";
+
+"Locate phone numbers\nworldwide with premium accuracy" = "Telefon numaralarını dünya çapında\nPremium doğrulukla bulun";
+
+"My Contacts" = "Kişilerim";
+
+"All your friends organized." = "Tüm arkadaşlarınız düzenli bir şekilde.";
+
+"Contact permission is needed to look up saved names." = "Kayıtlı isimleri aramak için kişi erişim izni gereklidir.";
+
+"No laps yet" = "Henüz tur yok";
+
+"Start the timer and tap Lap to track intervals." = "Zamanlayıcıyı başlatın ve aralıkları takip etmek için Tur'a dokunun.";
+
+"Lap %lld" = "Tur %lld";
+
+"Lap" = "Tur";
+
+"Reset" = "Sıfırla";
+
+"COMPASS" = "PUSULA";
+
+"MY LOCATION" = "KONUMUM";
+
+"Fetching coordinates..." = "Koordinatlar alınıyor...";
+
+"No area codes found for %@" = "%@ için alan kodu bulunamadı";
+
+"Area Codes" = "Alan Kodları";
+
+"Near By Places" = "Yakındaki Yerler";
+
+"Hi there" = "Merhaba";
+
+"Search worldwide numbers" = "Dünya çapında numaraları ara";
+
+"Search" = "Ara";
+
+"Weekly Plan" = "Haftalık Plan";
+
+"Billed every week" = "Her hafta ücretlendirilir";
+
+"Yearly Plan" = "Yıllık Plan";
+
+"Billed every year" = "Her yıl ücretlendirilir";
+
+"Monthly Plan" = "Aylık Plan";
+
+"Billed every month" = "Her ay ücretlendirilir";
+
+"50% OFF" = "%50 İNDİRİM";
+
+"Share App" = "Uygulamayı Paylaş";
+
+"Privacy Policy" = "Gizlilik Politikası";
+
+"Rate Us" = "Bizi Değerlendirin";
+
+"Feedback" = "Geri Bildirim";
+
+"Stopwatch" = "Kronometre";
+
+"GPS Tools" = "GPS Araçları";
+
+"Upgrade to PRO" = "PRO'ya Yükselt";
+
+"Remove ads and unlock all location" = "Reklamları kaldırın ve tüm konum özelliklerinin kilidini açın";
+
+"Settings" = "Ayarlar";
+
+"Track numbers and manage your\nfavorite tools" = "Numaraları takip edin ve\nfavori araçlarınızı yönetin";
+
+"Quick tools" = "Hızlı araçlar";
+
+"My\nContacts" = "Kişilerim";
+
+"Access\nyour saved\ncontacts." = "Kayıtlı\nkişilerinize\nerişin.";
+
+"Near By\nPlaces" = "Yakındaki\nYerler";
+
+"Find nearby\nservices\ninstantly." = "Yakındaki\nhizmetleri\nanında bulun.";
+
+"GPS\nTools" = "GPS\nAraçları";
+
+"Compass,\nlevel, codes\n& more." = "Pusula,\nseviye, kodlar\nve daha fazlası.";
+
+"Discover Phone\nNumber Details" = "Telefon Numarası\nDetaylarını Keşfedin";
+
+"Find country, operator, and\nbasic location info for any\nphone number." = "Herhangi bir telefon numarası için\nülkeyi, operatörü ve\ntemel konum bilgilerini bulun.";
+
+"Live Location & Call\nInfo" = "Canlı Konum ve Arama\nBilgileri";
+
+"Identify caller location on map,\ncountry code, and network." = "Arayanın konumunu haritada,\nülke kodunu ve ağı belirleyin.";
+
+"Next" = "İleri";
+
+"Country" = "Ülke";
+
+"Operator" = "Operatör";
+
+"Region" = "Bölge";
+
+"Line type" = "Hat türü";
+
+"Country +1" = "Ülke +1";
+
+"Network LTE" = "Ağ LTE";
+
+"Active now" = "Şu anda aktif";
+
+"Start" = "Başlat";

@@ -1,0 +1,189 @@
+/* Translations for pt-BR */
+
+"Language" = "Idioma";
+
+"Chinese" = "Chinês";
+
+"Spanish" = "Espanhol";
+
+"French" = "Francês";
+
+"English" = "Inglês";
+
+"Russian" = "Russo";
+
+"Hindi" = "Hindi";
+
+"Urdu" = "Urdu";
+
+"Portuguese (Brazil)" = "Português (Brasil)";
+
+"German" = "Alemão";
+
+"Japanese" = "Japonês";
+
+"Turkish" = "Turco";
+
+"Vietnamese" = "Vietnamita";
+
+"Czech" = "Tcheco";
+
+"Phone Locator" = "Localizador de telefone";
+
+"Pinpoint any phone number\non the map." = "Localize qualquer número de telefone\ncom precisão no mapa.";
+
+"Locate now" = "Localizar agora";
+
+"Live caller location" = "Localização do chamador em tempo real";
+
+"Recent lookups" = "Pesquisas recentes";
+
+"Saved in one place" = "Salvo em um só lugar";
+
+"Details" = "Detalhes";
+
+"Number details" = "Detalhes do número";
+
+"Carrier" = "Operadora";
+
+"Unknown" = "Desconhecido";
+
+"Location" = "Localização";
+
+"Only Phone numbers starting with the proper country code and number format will have their information retrieved." = "As informações só poderão ser obtidas para números de telefone que começam com o código do país e o formato de número corretos.";
+
+"OK" = "OK";
+
+"Phone Number Tracker" = "Rastreador de número de telefone";
+
+"Locate any number worldwide" = "Localize qualquer número no mundo inteiro";
+
+"This action may contain ads" = "Esta ação pode conter anúncios";
+
+"Cancel Anytime on Google Play" = "Cancele a qualquer momento no Google Play";
+
+"By ordering, you accept the Terms of Service and Privacy Policy. Subscription renews automatically unless canceled at least 24 hours before the current period ends." = "Ao fazer o pedido, você aceita os Termos de Serviço e a Política de Privacidade. A assinatura será renovada automaticamente, a menos que seja cancelada pelo menos 24 horas antes do término do período atual.";
+
+"Most Popular" = "Mais popular";
+
+"Continue" = "Continuar";
+
+"Ad-Free\nExperience" = "Experiência\nsem anúncios";
+
+"Enjoy seamless tracking without\nannoying interruptions" = "Aproveite o rastreamento contínuo sem\ninterrupções incômodas";
+
+"All Premium Tools\nUnlocked" = "Todas as ferramentas Premium\ndesbloqueadas";
+
+"GPS tools, contacts, and nearby\nplaces at your fingertips" = "Ferramentas de GPS, contatos e locais próximos\nna ponta dos seus dedos";
+
+"Track Any\nNumber" = "Rastreie qualquer\nnúmero";
+
+"Locate phone numbers\nworldwide with premium accuracy" = "Localize números de telefone\nno mundo inteiro com precisão Premium";
+
+"My Contacts" = "Meus contatos";
+
+"All your friends organized." = "Todos os seus amigos organizados.";
+
+"Contact permission is needed to look up saved names." = "A permissão para acessar os contatos é necessária para consultar os nomes salvos.";
+
+"No laps yet" = "Nenhuma volta ainda";
+
+"Start the timer and tap Lap to track intervals." = "Inicie o cronômetro e toque em Volta para acompanhar os intervalos.";
+
+"Lap %lld" = "Volta %lld";
+
+"Lap" = "Volta";
+
+"Reset" = "Redefinir";
+
+"COMPASS" = "BÚSSOLA";
+
+"MY LOCATION" = "MINHA LOCALIZAÇÃO";
+
+"Fetching coordinates..." = "Obtendo coordenadas...";
+
+"No area codes found for %@" = "Nenhum código de área encontrado para %@";
+
+"Area Codes" = "Códigos de área";
+
+"Near By Places" = "Locais próximos";
+
+"Hi there" = "Olá";
+
+"Search worldwide numbers" = "Pesquisar números no mundo inteiro";
+
+"Search" = "Pesquisar";
+
+"Weekly Plan" = "Plano semanal";
+
+"Billed every week" = "Cobrado semanalmente";
+
+"Yearly Plan" = "Plano anual";
+
+"Billed every year" = "Cobrado anualmente";
+
+"Monthly Plan" = "Plano mensal";
+
+"Billed every month" = "Cobrado mensalmente";
+
+"50% OFF" = "50% DE DESCONTO";
+
+"Share App" = "Compartilhar aplicativo";
+
+"Privacy Policy" = "Política de Privacidade";
+
+"Rate Us" = "Avalie-nos";
+
+"Feedback" = "Feedback";
+
+"Stopwatch" = "Cronômetro";
+
+"GPS Tools" = "Ferramentas de GPS";
+
+"Upgrade to PRO" = "Atualizar para PRO";
+
+"Remove ads and unlock all location" = "Remova os anúncios e desbloqueie todos os recursos de localização";
+
+"Settings" = "Configurações";
+
+"Track numbers and manage your\nfavorite tools" = "Rastreie números e gerencie suas\nferramentas favoritas";
+
+"Quick tools" = "Ferramentas rápidas";
+
+"My\nContacts" = "Meus\ncontatos";
+
+"Access\nyour saved\ncontacts." = "Acesse seus\ncontatos\nsalvos.";
+
+"Near By\nPlaces" = "Locais\npróximos";
+
+"Find nearby\nservices\ninstantly." = "Encontre serviços\npróximos\ninstantaneamente.";
+
+"GPS\nTools" = "Ferramentas\nGPS";
+
+"Compass,\nlevel, codes\n& more." = "Bússola,\nnivelamento, códigos\ne muito mais.";
+
+"Discover Phone\nNumber Details" = "Descubra os detalhes\ndo número de telefone";
+
+"Find country, operator, and\nbasic location info for any\nphone number." = "Encontre o país, a operadora e\ninformações básicas de localização\npara qualquer número de telefone.";
+
+"Live Location & Call\nInfo" = "Localização em tempo real e\ninformações da chamada";
+
+"Identify caller location on map,\ncountry code, and network." = "Identifique a localização do chamador no mapa,\no código do país e a rede.";
+
+"Next" = "Próximo";
+
+"Country" = "País";
+
+"Operator" = "Operadora";
+
+"Region" = "Região";
+
+"Line type" = "Tipo de linha";
+
+"Country +1" = "País +1";
+
+"Network LTE" = "Rede LTE";
+
+"Active now" = "Ativo agora";
+
+"Start" = "Iniciar";

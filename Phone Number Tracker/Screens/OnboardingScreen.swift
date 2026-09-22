@@ -72,7 +72,7 @@ struct OnboardingScreen: View {
                     onFinish()
                 }
             } label: {
-                Text(selectedPage == pages.count - 1 ? copy.start : copy.next)
+                Text(LocalizedStringKey(selectedPage == pages.count - 1 ? copy.start : copy.next))
                     .font(.system(size: 16, weight: .semibold, design: .rounded))
                     .foregroundStyle(Color(red: 28 / 255, green: 28 / 255, blue: 32 / 255))
                     .padding(.horizontal, 22)

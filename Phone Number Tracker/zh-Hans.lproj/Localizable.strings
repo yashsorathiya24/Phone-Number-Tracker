@@ -1,0 +1,189 @@
+/* Translations for zh-Hans */
+
+"Language" = "语言";
+
+"Chinese" = "中文";
+
+"Spanish" = "西班牙语";
+
+"French" = "法语";
+
+"English" = "英语";
+
+"Russian" = "俄语";
+
+"Hindi" = "印地语";
+
+"Urdu" = "乌尔都语";
+
+"Portuguese (Brazil)" = "葡萄牙语（巴西）";
+
+"German" = "德语";
+
+"Japanese" = "日语";
+
+"Turkish" = "土耳其语";
+
+"Vietnamese" = "越南语";
+
+"Czech" = "捷克语";
+
+"Phone Locator" = "手机定位器";
+
+"Pinpoint any phone number\non the map." = "在地图上精准定位\n任何电话号码。";
+
+"Locate now" = "立即定位";
+
+"Live caller location" = "实时来电位置";
+
+"Recent lookups" = "最近查询";
+
+"Saved in one place" = "集中保存";
+
+"Details" = "详情";
+
+"Number details" = "号码详情";
+
+"Carrier" = "运营商";
+
+"Unknown" = "未知";
+
+"Location" = "位置";
+
+"Only Phone numbers starting with the proper country code and number format will have their information retrieved." = "只有以正确的国家代码和号码格式开头的电话号码才能获取相关信息。";
+
+"OK" = "确定";
+
+"Phone Number Tracker" = "电话号码追踪器";
+
+"Locate any number worldwide" = "定位全球任何电话号码";
+
+"This action may contain ads" = "此操作可能包含广告";
+
+"Cancel Anytime on Google Play" = "可随时在 Google Play 上取消";
+
+"By ordering, you accept the Terms of Service and Privacy Policy. Subscription renews automatically unless canceled at least 24 hours before the current period ends." = "下单即表示您同意服务条款和隐私政策。除非在当前订阅周期结束前至少 24 小时取消，否则订阅将自动续订。";
+
+"Most Popular" = "最受欢迎";
+
+"Continue" = "继续";
+
+"Ad-Free\nExperience" = "无广告\n体验";
+
+"Enjoy seamless tracking without\nannoying interruptions" = "享受流畅的追踪体验，不受\n烦人广告打扰";
+
+"All Premium Tools\nUnlocked" = "所有高级工具\n已解锁";
+
+"GPS tools, contacts, and nearby\nplaces at your fingertips" = "GPS 工具、联系人和附近地点\n尽在掌握";
+
+"Track Any\nNumber" = "追踪任何\n号码";
+
+"Locate phone numbers\nworldwide with premium accuracy" = "以高级精准度定位\n全球电话号码";
+
+"My Contacts" = "我的联系人";
+
+"All your friends organized." = "集中管理您的所有联系人。";
+
+"Contact permission is needed to look up saved names." = "需要联系人访问权限才能查询已保存的姓名。";
+
+"No laps yet" = "暂无计次";
+
+"Start the timer and tap Lap to track intervals." = "启动计时器并点击“计次”以记录时间间隔。";
+
+"Lap %lld" = "计次 %lld";
+
+"Lap" = "计次";
+
+"Reset" = "重置";
+
+"COMPASS" = "指南针";
+
+"MY LOCATION" = "我的位置";
+
+"Fetching coordinates..." = "正在获取坐标...";
+
+"No area codes found for %@" = "未找到 %@ 的区号";
+
+"Area Codes" = "区号";
+
+"Near By Places" = "附近地点";
+
+"Hi there" = "你好";
+
+"Search worldwide numbers" = "搜索全球电话号码";
+
+"Search" = "搜索";
+
+"Weekly Plan" = "周订阅";
+
+"Billed every week" = "每周计费";
+
+"Yearly Plan" = "年订阅";
+
+"Billed every year" = "每年计费";
+
+"Monthly Plan" = "月订阅";
+
+"Billed every month" = "每月计费";
+
+"50% OFF" = "优惠 50%";
+
+"Share App" = "分享应用";
+
+"Privacy Policy" = "隐私政策";
+
+"Rate Us" = "给我们评分";
+
+"Feedback" = "反馈";
+
+"Stopwatch" = "秒表";
+
+"GPS Tools" = "GPS 工具";
+
+"Upgrade to PRO" = "升级到 PRO";
+
+"Remove ads and unlock all location" = "移除广告并解锁所有定位功能";
+
+"Settings" = "设置";
+
+"Track numbers and manage your\nfavorite tools" = "追踪号码并管理您的\n常用工具";
+
+"Quick tools" = "快捷工具";
+
+"My\nContacts" = "我的\n联系人";
+
+"Access\nyour saved\ncontacts." = "访问您\n保存的\n联系人。";
+
+"Near By\nPlaces" = "附近\n地点";
+
+"Find nearby\nservices\ninstantly." = "即时查找\n附近的\n服务。";
+
+"GPS\nTools" = "GPS\n工具";
+
+"Compass,\nlevel, codes\n& more." = "指南针、\n水平仪、区号\n及更多功能。";
+
+"Discover Phone\nNumber Details" = "了解电话号码\n详细信息";
+
+"Find country, operator, and\nbasic location info for any\nphone number." = "查询任何电话号码的\n国家、运营商和\n基本位置信息。";
+
+"Live Location & Call\nInfo" = "实时位置和\n通话信息";
+
+"Identify caller location on map,\ncountry code, and network." = "在地图上查看来电者位置、\n国家代码和网络信息。";
+
+"Next" = "下一步";
+
+"Country" = "国家";
+
+"Operator" = "运营商";
+
+"Region" = "地区";
+
+"Line type" = "线路类型";
+
+"Country +1" = "国家 +1";
+
+"Network LTE" = "网络 LTE";
+
+"Active now" = "当前活跃";
+
+"Start" = "开始";
