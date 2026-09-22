@@ -87,11 +87,9 @@ struct ContentView: View {
 
     private func runLaunchSequence() async {
         guard stage == .splash else { return }
-        try? await Task.sleep(for: .seconds(1.2))
-        stage = .loading
+//        try? await Task.sleep(for: .seconds(1.2))
+//        stage = .loading
         try? await Task.sleep(for: .seconds(1.9))
-        stage = .adLoading
-        try? await Task.sleep(for: .seconds(1.8))
         stage = .language
     }
 }

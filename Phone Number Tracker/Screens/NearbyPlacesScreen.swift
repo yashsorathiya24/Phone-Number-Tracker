@@ -88,7 +88,7 @@ struct NearbyPlacesScreen: View {
                 LazyVStack(alignment: .leading, spacing: 24) {
                     ForEach(categories) { category in
                         VStack(alignment: .leading, spacing: 12) {
-                            Text(category.name)
+                            Text(LocalizedStringKey(category.name))
                                 .font(.system(size: 20, weight: .bold, design: .rounded))
                                 .foregroundStyle(Color.black)
                                 .padding(.horizontal, 4)

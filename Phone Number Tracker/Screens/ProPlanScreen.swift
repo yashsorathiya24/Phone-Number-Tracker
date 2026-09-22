@@ -252,13 +252,13 @@ struct ProPlanScreen: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
                         .stroke(
-                            isCenter
+                            isSelected
                                 ? Color(red: 40 / 255, green: 120 / 255, blue: 235 / 255)
                                 : Color(red: 220 / 255, green: 224 / 255, blue: 232 / 255),
-                            lineWidth: isCenter ? 2 : 1.2
+                            lineWidth: isSelected ? 2 : 1.2
                         )
                 )
-                .shadow(color: isCenter ? Color.blue.opacity(0.12) : Color.clear, radius: 6, x: 0, y: 3)
+                .shadow(color: isSelected ? Color.blue.opacity(0.12) : Color.clear, radius: 6, x: 0, y: 3)
 
                 // Badge pill at top
                 if let badge = badge {

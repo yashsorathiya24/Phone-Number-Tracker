@@ -25,6 +25,9 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func startUpdating() {
+        if manager.authorizationStatus == .notDetermined {
+            manager.requestWhenInUseAuthorization()
+        }
         manager.startUpdatingLocation()
         manager.startUpdatingHeading()
     }
