@@ -10,16 +10,18 @@ import SafariServices
 struct SettingsScreen: View {
     var onBack: () -> Void
 
-    @State private var showProSheet = false
-    @State private var showLanguageSheet = false
-    @State private var showPrivacySheet = false
+    @State private var showProScreen = false
+    @State private var showLanguageScreen = false
+    @State private var showPrivacyScreen = false
     @State private var showFeedbackSheet = false
     @State private var showShareSheet = false
+    @State private var selectedLanguage = "English"
 
     var body: some View {
-        ZStack {
-            Color.white
-                .ignoresSafeArea()
+        NavigationStack {
+            ZStack {
+                Color.white
+                    .ignoresSafeArea()
 
             VStack(spacing: 0) {
                 // Navigation Header
@@ -38,7 +40,7 @@ struct SettingsScreen: View {
                             settingsCard(title: "Language") {
                                 LanguageSettingsIcon()
                             } action: {
-                                showLanguageSheet = true
+                                showLanguageScreen = true
                             }
 
                             settingsCard(title: "Share App") {
@@ -50,7 +52,7 @@ struct SettingsScreen: View {
                             settingsCard(title: "Privacy Policy") {
                                 PrivacySettingsIcon()
                             } action: {
-                                showPrivacySheet = true
+                                showPrivacyScreen = true
                             }
 
                             settingsCard(title: "Rate Us") {
@@ -71,17 +73,24 @@ struct SettingsScreen: View {
                 }
             }
         }
-        .sheet(isPresented: $showProSheet) {
-            ProUpgradeView()
+        .navigationDestination(isPresented: $showLanguageScreen) {
+            LanguageScreen(selectedLanguage: $selectedLanguage) {
+                showLanguageScreen = false
+            }
+            .navigationBarBackButtonHidden(true)
         }
-        .sheet(isPresented: $showLanguageSheet) {
-            LanguageSelectionSheet()
+        .navigationDestination(isPresented: $showPrivacyScreen) {
+            PrivacyPolicyScreen()
         }
-        .sheet(isPresented: $showPrivacySheet) {
-            PrivacyPolicySheet()
+        .navigationDestination(isPresented: $showProScreen) {
+            ProPlanScreen {
+                showProScreen = false
+            }
+            .navigationBarBackButtonHidden(true)
         }
         .sheet(isPresented: $showFeedbackSheet) {
             FeedbackSheet()
+        }
         }
     }
 
@@ -109,7 +118,7 @@ struct SettingsScreen: View {
     // MARK: - PRO Banner Button
     private var proBannerButton: some View {
         Button {
-            showProSheet = true
+            showProScreen = true
         } label: {
             HStack(spacing: 16) {
                 // Royal blue circular badge with gold crown
@@ -325,7 +334,7 @@ struct RateUsSettingsIcon: View {
 struct FeedbackSettingsIcon: View {
     var body: some View {
         ZStack {
-            Image(systemName: "bubble.left.and.pencil")
+            Image(systemName: "text.bubble.fill")
                 .font(.system(size: 23, weight: .bold))
                 .foregroundStyle(Color(red: 45 / 255, green: 130 / 255, blue: 245 / 255))
         }
@@ -436,47 +445,6 @@ struct ProUpgradeView: View {
     }
 }
 
-struct LanguageSelectionSheet: View {
-    @Environment(\.dismiss) private var dismiss
-    @State private var selectedLanguage = "English"
-
-    let languages = [
-        "English", "Spanish", "French", "German",
-        "Hindi", "Portuguese", "Russian", "Arabic"
-    ]
-
-    var body: some View {
-        NavigationStack {
-            List(languages, id: \.self) { lang in
-                HStack {
-                    Text(lang)
-                        .font(.system(size: 16, weight: .medium, design: .rounded))
-                    Spacer()
-                    if selectedLanguage == lang {
-                        Image(systemName: "checkmark")
-                            .foregroundStyle(Color.blue)
-                            .font(.system(size: 14, weight: .bold))
-                    }
-                }
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    selectedLanguage = lang
-                    dismiss()
-                }
-            }
-            .navigationTitle("Select Language")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Done") {
-                        dismiss()
-                    }
-                }
-            }
-        }
-    }
-}
-
 struct SafariView: UIViewControllerRepresentable {
     let url: URL
 
@@ -491,13 +459,27 @@ struct SafariView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {}
 }
 
-struct PrivacyPolicySheet: View {
+struct PrivacyPolicyScreen: View {
     @Environment(\.dismiss) private var dismiss
     private let privacyURL = URL(string: "https://phonelocator.live/phone-locator-privacy-policy/")!
 
     var body: some View {
         SafariView(url: privacyURL)
             .ignoresSafeArea()
+            .navigationTitle("Privacy Policy")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "arrow.left")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundColor(.black)
+                    }
+                }
+            }
     }
 }
 

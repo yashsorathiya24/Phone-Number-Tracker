@@ -7,7 +7,7 @@ import SwiftUI
 
 struct HomeScreen: View {
     var onOpenSettings: () -> Void
-    @State private var showProSheet = false
+    @State private var showProScreen = false
     @State private var showPhoneLocatorSheet = false
     @State private var showContactsSheet = false
     @State private var showNearbySheet = false
@@ -39,8 +39,11 @@ struct HomeScreen: View {
                     .padding(.horizontal, 20)
                 }
             }
-            .sheet(isPresented: $showProSheet) {
-                ProUpgradeView()
+            .navigationDestination(isPresented: $showProScreen) {
+                ProPlanScreen {
+                    showProScreen = false
+                }
+                .navigationBarBackButtonHidden(true)
             }
             .navigationDestination(isPresented: $showPhoneLocatorSheet) {
                 PhoneLocatorScreen()
@@ -100,7 +103,7 @@ struct HomeScreen: View {
             HStack(spacing: 12) {
                 // Crown PRO Button
                 Button {
-                    showProSheet = true
+                    showProScreen = true
                 } label: {
                     ZStack {
                         Circle()
@@ -265,6 +268,10 @@ struct HomeScreen: View {
 struct GPSToolsSheet: View {
     @Environment(\.dismiss) private var dismiss
     @State private var selectedTool: String?
+    @State private var showCompass = false
+    @State private var showSpeedometer = false
+    @State private var showStopwatch = false
+    @State private var showLevelMeter = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -349,6 +356,18 @@ struct GPSToolsSheet: View {
             }
         }
         .background(Color.white.ignoresSafeArea())
+        .navigationDestination(isPresented: $showCompass) {
+            CompassScreen()
+        }
+        .navigationDestination(isPresented: $showSpeedometer) {
+            SpeedometerScreen()
+        }
+        .navigationDestination(isPresented: $showStopwatch) {
+            StopwatchScreen()
+        }
+        .navigationDestination(isPresented: $showLevelMeter) {
+            LevelMeterScreen()
+        }
         .sheet(item: Binding<IdentifiableString?>(
             get: { selectedTool.map { IdentifiableString($0) } },
             set: { selectedTool = $0?.value }
@@ -359,7 +378,17 @@ struct GPSToolsSheet: View {
 
     private func gpsToolRow(title: String, icon: AnyView) -> some View {
         Button {
-            selectedTool = title
+            if title == "Compass" {
+                showCompass = true
+            } else if title == "Speedometer" {
+                showSpeedometer = true
+            } else if title == "Stopwatch" {
+                showStopwatch = true
+            } else if title == "Level Meter" {
+                showLevelMeter = true
+            } else {
+                selectedTool = title
+            }
         } label: {
             HStack(spacing: 16) {
                 icon
