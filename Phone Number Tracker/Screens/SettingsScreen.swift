@@ -20,7 +20,7 @@ struct SettingsScreen: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.white
+                TrackerTheme.background
                     .ignoresSafeArea()
 
             VStack(spacing: 0) {
@@ -99,10 +99,12 @@ struct SettingsScreen: View {
         ZStack {
             HStack {
                 Button(action: onBack) {
-                    Image(systemName: "arrow.left")
-                        .font(.system(size: 20, weight: .bold))
-                        .foregroundStyle(Color(red: 20 / 255, green: 20 / 255, blue: 24 / 255))
-                        .frame(width: 40, height: 40, alignment: .leading)
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundStyle(TrackerTheme.ink)
+                        .frame(width: 42, height: 42)
+                        .background(Color.white.opacity(0.82))
+                        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                 }
                 .buttonStyle(.plain)
 
@@ -110,8 +112,8 @@ struct SettingsScreen: View {
             }
 
             Text("Settings")
-                .font(.system(size: 22, weight: .bold, design: .rounded))
-                .foregroundStyle(Color(red: 24 / 255, green: 26 / 255, blue: 32 / 255))
+                .font(.system(size: 24, weight: .heavy, design: .rounded))
+                .foregroundStyle(TrackerTheme.ink)
         }
     }
 
@@ -121,63 +123,58 @@ struct SettingsScreen: View {
             showProScreen = true
         } label: {
             HStack(spacing: 16) {
-                // Royal blue circular badge with gold crown
                 ZStack {
-                    Circle()
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
                         .fill(
                             LinearGradient(
                                 colors: [
-                                    Color(red: 50 / 255, green: 140 / 255, blue: 250 / 255),
-                                    Color(red: 30 / 255, green: 110 / 255, blue: 235 / 255)
+                                    TrackerTheme.coral,
+                                    TrackerTheme.amber
                                 ],
                                 startPoint: .top,
                                 endPoint: .bottom
                             )
                         )
-                        .frame(width: 44, height: 44)
-                        .shadow(color: Color.blue.opacity(0.2), radius: 4, x: 0, y: 2)
+                        .frame(width: 50, height: 50)
+                        .shadow(color: TrackerTheme.coral.opacity(0.2), radius: 10, x: 0, y: 5)
 
                     Image(systemName: "crown.fill")
                         .font(.system(size: 20, weight: .bold))
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [
-                                    Color(red: 255 / 255, green: 235 / 255, blue: 90 / 255),
-                                    Color(red: 255 / 255, green: 195 / 255, blue: 40 / 255)
-                                ],
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                        )
+                        .foregroundStyle(.white)
                 }
-                .padding(.leading, 6)
 
                 VStack(alignment: .leading, spacing: 3) {
                     Text("Upgrade to PRO")
                         .font(.system(size: 19, weight: .heavy, design: .rounded))
-                        .foregroundStyle(Color(red: 20 / 255, green: 20 / 255, blue: 22 / 255))
+                        .foregroundStyle(.white)
 
                     Text("Remove ads and unlock all location")
                         .font(.system(size: 13.5, weight: .semibold, design: .rounded))
-                        .foregroundStyle(Color(red: 145 / 255, green: 98 / 255, blue: 20 / 255))
+                        .foregroundStyle(Color.white.opacity(0.82))
+                        .lineLimit(2)
                 }
 
                 Spacer()
+
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 16, weight: .heavy))
+                    .foregroundStyle(.white.opacity(0.9))
             }
             .padding(.horizontal, 16)
-            .frame(height: 74)
+            .frame(minHeight: 82)
             .background(
                 LinearGradient(
                     colors: [
-                        Color(red: 255 / 255, green: 175 / 255, blue: 15 / 255),
-                        Color(red: 255 / 255, green: 205 / 255, blue: 25 / 255)
+                        TrackerTheme.navy,
+                        TrackerTheme.indigo,
+                        TrackerTheme.teal
                     ],
-                    startPoint: .leading,
-                    endPoint: .trailing
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
                 )
             )
-            .clipShape(Capsule())
-            .shadow(color: Color(red: 255 / 255, green: 175 / 255, blue: 15 / 255).opacity(0.35), radius: 10, x: 0, y: 5)
+            .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+            .shadow(color: TrackerTheme.navy.opacity(0.16), radius: 16, x: 0, y: 8)
         }
         .buttonStyle(.plain)
     }
@@ -195,19 +192,23 @@ struct SettingsScreen: View {
 
                 Text(title)
                     .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color(red: 22 / 255, green: 24 / 255, blue: 30 / 255))
+                    .foregroundStyle(TrackerTheme.ink)
 
                 Spacer()
+
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 15, weight: .heavy))
+                    .foregroundStyle(TrackerTheme.teal)
             }
             .padding(.horizontal, 20)
             .frame(height: 72)
-            .background(Color(red: 248 / 255, green: 250 / 255, blue: 252 / 255))
+            .background(Color.white.opacity(0.9))
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(Color(red: 226 / 255, green: 232 / 255, blue: 240 / 255), lineWidth: 1.2)
+                    .stroke(TrackerTheme.stroke.opacity(0.9), lineWidth: 1)
             )
-            .shadow(color: Color.black.opacity(0.015), radius: 5, x: 0, y: 2)
+            .shadow(color: TrackerTheme.navy.opacity(0.04), radius: 10, x: 0, y: 5)
         }
         .buttonStyle(.plain)
     }

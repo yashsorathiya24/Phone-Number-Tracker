@@ -26,20 +26,21 @@ struct OnboardingScreen: View {
 
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
+            TrackerTheme.background
+                .ignoresSafeArea()
 
             Image("img_number_bg")
                 .resizable()
                 .scaledToFill()
+                .opacity(0.16)
                 .ignoresSafeArea()
 
             LinearGradient(
                 stops: [
-                    .init(color: .clear, location: 0.0),
-                    .init(color: .white.opacity(0.25), location: 0.38),
-                    .init(color: .white.opacity(0.80), location: 0.58),
-                    .init(color: .white.opacity(0.94), location: 0.78),
-                    .init(color: .white.opacity(0.97), location: 1.0)
+                    .init(color: TrackerTheme.navy.opacity(0.10), location: 0.0),
+                    .init(color: .clear, location: 0.35),
+                    .init(color: Color.white.opacity(0.72), location: 0.62),
+                    .init(color: Color.white.opacity(0.90), location: 1.0)
                 ],
                 startPoint: .top,
                 endPoint: .bottom
@@ -73,14 +74,13 @@ struct OnboardingScreen: View {
                 }
             } label: {
                 Text(LocalizedStringKey(selectedPage == pages.count - 1 ? copy.start : copy.next))
-                    .font(.system(size: 16, weight: .semibold, design: .rounded))
-                    .foregroundStyle(Color(red: 28 / 255, green: 28 / 255, blue: 32 / 255))
-                    .padding(.horizontal, 22)
-                    .frame(height: 36)
-                    .overlay {
-                        Capsule()
-                            .stroke(Color(red: 35 / 255, green: 35 / 255, blue: 40 / 255), lineWidth: 1.2)
-                    }
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 24)
+                    .frame(height: 42)
+                    .background(TrackerTheme.navy)
+                    .clipShape(Capsule())
+                    .shadow(color: TrackerTheme.navy.opacity(0.18), radius: 10, x: 0, y: 5)
             }
             .buttonStyle(.plain)
         }

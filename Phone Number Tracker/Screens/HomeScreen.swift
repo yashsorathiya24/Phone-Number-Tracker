@@ -19,19 +19,16 @@ struct HomeScreen: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.white
+                TrackerTheme.background
                     .ignoresSafeArea()
 
                 ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: 22) {
-                        // Header Section
+                    VStack(alignment: .leading, spacing: 24) {
                         headerSection
-                            .padding(.top, 12)
+                            .padding(.top, 18)
 
-                        // Phone Locator Hero Card
                         heroCard
 
-                        // Quick Tools Section
                         quickToolsSection
 
                         Spacer(minLength: 28)
@@ -80,71 +77,60 @@ struct HomeScreen: View {
 
     // MARK: - Header
     private var headerSection: some View {
-        HStack(alignment: .top) {
-            VStack(alignment: .leading, spacing: 6) {
-                HStack(spacing: 8) {
-                    Text("Hi there")
-                        .font(.system(size: 28, weight: .heavy, design: .rounded))
-                        .foregroundStyle(Color(red: 20 / 255, green: 22 / 255, blue: 28 / 255))
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .center) {
+                Text("Hi there")
+                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                    .foregroundStyle(TrackerTheme.teal)
+                    .textCase(.uppercase)
 
-                    Text("👋")
-                        .font(.system(size: 26))
-                }
+                Spacer(minLength: 12)
 
-                Text(LocalizedStringKey("Track numbers and manage your favorite tools"))
-                    .font(.system(size: 14, weight: .medium, design: .rounded))
-                    .foregroundStyle(Color(red: 130 / 255, green: 134 / 255, blue: 145 / 255))
-                    .lineLimit(2)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-
-            Spacer(minLength: 12)
-
-            HStack(spacing: 12) {
-                // Crown PRO Button
                 Button {
                     showProScreen = true
                 } label: {
                     ZStack {
-                        Circle()
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
                             .fill(
                                 LinearGradient(
                                     colors: [
-                                        Color(red: 50 / 255, green: 140 / 255, blue: 250 / 255),
-                                        Color(red: 30 / 255, green: 110 / 255, blue: 235 / 255)
+                                        TrackerTheme.coral,
+                                        TrackerTheme.amber
                                     ],
                                     startPoint: .top,
                                     endPoint: .bottom
                                 )
                             )
                             .frame(width: 42, height: 42)
-                            .shadow(color: Color.blue.opacity(0.25), radius: 4, x: 0, y: 2)
+                            .shadow(color: TrackerTheme.coral.opacity(0.24), radius: 10, x: 0, y: 5)
 
                         Image(systemName: "crown.fill")
                             .font(.system(size: 18, weight: .bold))
-                            .foregroundStyle(
-                                LinearGradient(
-                                    colors: [
-                                        Color(red: 255 / 255, green: 235 / 255, blue: 85 / 255),
-                                        Color(red: 255 / 255, green: 195 / 255, blue: 35 / 255)
-                                    ],
-                                    startPoint: .top,
-                                    endPoint: .bottom
-                                )
-                            )
+                            .foregroundStyle(.white)
                     }
                 }
                 .buttonStyle(.plain)
 
-                // Settings Gear Button
                 Button(action: onOpenSettings) {
                     Image(systemName: "gearshape.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(Color(red: 24 / 255, green: 26 / 255, blue: 32 / 255))
+                        .font(.system(size: 21, weight: .semibold))
+                        .foregroundStyle(TrackerTheme.ink)
                         .frame(width: 42, height: 42)
+                        .background(.white.opacity(0.78))
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                .stroke(TrackerTheme.stroke.opacity(0.75), lineWidth: 1)
+                        )
                 }
                 .buttonStyle(.plain)
             }
+
+            Text(LocalizedStringKey("Track numbers and manage your favorite tools"))
+                .font(.system(size: 24, weight: .heavy, design: .rounded))
+                .foregroundStyle(TrackerTheme.ink)
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
 
@@ -154,16 +140,25 @@ struct HomeScreen: View {
             showPhoneLocatorSheet = true
         } label: {
             ZStack(alignment: .bottomTrailing) {
-                HStack(alignment: .center, spacing: 10) {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Phone Locator")
-                            .font(.system(size: 23, weight: .heavy, design: .rounded))
-                            .foregroundStyle(.white)
+                Circle()
+                    .stroke(Color.white.opacity(0.2), lineWidth: 18)
+                    .frame(width: 190, height: 190)
+                    .offset(x: 70, y: 64)
 
-                        Text("Pinpoint any phone number\non the map.")
-                            .font(.system(size: 14, weight: .regular, design: .rounded))
+                HStack(alignment: .center, spacing: 12) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Phone Locator")
+                            .font(.system(size: 30, weight: .heavy, design: .rounded))
+                            .foregroundStyle(.white)
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
+
+                        Text("Pinpoint any phone number on the map.")
+                            .font(.system(size: 14, weight: .medium, design: .rounded))
                             .foregroundStyle(Color.white.opacity(0.92))
                             .lineSpacing(2)
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
 
                         Button {
                             showPhoneLocatorSheet = true
@@ -175,7 +170,7 @@ struct HomeScreen: View {
                                 Text("Locate now")
                                     .font(.system(size: 15, weight: .bold, design: .rounded))
                             }
-                            .foregroundStyle(Color(red: 30 / 255, green: 120 / 255, blue: 240 / 255))
+                            .foregroundStyle(TrackerTheme.navy)
                             .padding(.horizontal, 18)
                             .frame(height: 38)
                             .background(Color.white)
@@ -188,30 +183,33 @@ struct HomeScreen: View {
 
                     Spacer(minLength: 0)
 
-                    // Phone Locator Illustration Artwork
                     Image("ic_locator")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 140, height: 140)
-                        .offset(x: 6, y: 4)
+                        .frame(width: 132, height: 132)
+                        .padding(12)
+                        .background(Color.white.opacity(0.14))
+                        .clipShape(RoundedRectangle(cornerRadius: 32, style: .continuous))
+                        .offset(x: 8, y: 5)
                 }
                 .padding(.leading, 20)
-                .padding(.trailing, 10)
-                .padding(.vertical, 22)
+                .padding(.trailing, 12)
+                .padding(.vertical, 24)
             }
             .frame(maxWidth: .infinity)
             .background(
                 LinearGradient(
                     colors: [
-                        Color(red: 255 / 255, green: 82 / 255, blue: 142 / 255),
-                        Color(red: 135 / 255, green: 90 / 255, blue: 248 / 255)
+                        TrackerTheme.navy,
+                        TrackerTheme.indigo,
+                        TrackerTheme.teal
                     ],
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
             )
-            .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
-            .shadow(color: Color(red: 255 / 255, green: 82 / 255, blue: 142 / 255).opacity(0.28), radius: 14, x: 0, y: 7)
+            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .shadow(color: TrackerTheme.navy.opacity(0.22), radius: 18, x: 0, y: 10)
         }
         .buttonStyle(.plain)
     }
@@ -221,16 +219,16 @@ struct HomeScreen: View {
         VStack(alignment: .leading, spacing: 14) {
             Text("Quick tools")
                 .font(.system(size: 21, weight: .heavy, design: .rounded))
-                .foregroundStyle(Color(red: 22 / 255, green: 24 / 255, blue: 30 / 255))
+                .foregroundStyle(TrackerTheme.ink)
 
-            HStack(spacing: 12) {
+            VStack(spacing: 12) {
                 QuickToolCard(
                     icon: Image("ic_contact")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 58, height: 58),
-                    title: "My\nContacts",
-                    subtitle: "Access\nyour saved\ncontacts."
+                        .frame(width: 54, height: 54),
+                    title: "My Contacts",
+                    accent: TrackerTheme.teal
                 ) {
                     showContactsSheet = true
                 }
@@ -239,9 +237,9 @@ struct HomeScreen: View {
                     icon: Image("ic_nearby")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 58, height: 58),
-                    title: "Near By\nPlaces",
-                    subtitle: "Find nearby\nservices\ninstantly."
+                        .frame(width: 54, height: 54),
+                    title: "Near By Places",
+                    accent: TrackerTheme.coral
                 ) {
                     showNearbySheet = true
                 }
@@ -250,9 +248,9 @@ struct HomeScreen: View {
                     icon: Image("ic_gpstool")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 58, height: 58),
-                    title: "GPS\nTools",
-                    subtitle: "Compass,\nlevel, codes\n& more."
+                        .frame(width: 54, height: 54),
+                    title: "GPS Tools",
+                    accent: TrackerTheme.indigo
                 ) {
                     showGPSToolsSheet = true
                 }
@@ -275,88 +273,96 @@ struct GPSToolsSheet: View {
     @State private var showAreaCodes = false
 
     var body: some View {
-        VStack(spacing: 0) {
-            // Top Header
-            HStack {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "arrow.left")
-                        .font(.system(size: 20, weight: .bold))
-                        .foregroundStyle(Color.black)
-                }
-                .frame(width: 44, height: 44)
+        ZStack {
+            TrackerTheme.background
+                .ignoresSafeArea()
 
-                Spacer()
+            VStack(spacing: 0) {
+                HStack {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundStyle(TrackerTheme.ink)
+                            .frame(width: 42, height: 42)
+                            .background(Color.white.opacity(0.8))
+                            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    }
 
-                Text("GPS Tools")
-                    .font(.system(size: 22, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color(red: 40 / 255, green: 42 / 255, blue: 50 / 255))
-                    .offset(x: -8) // center visually
+                    Spacer()
 
-                Spacer()
+                    VStack(spacing: 2) {
+                        Text("GPS Tools")
+                            .font(.system(size: 24, weight: .heavy, design: .rounded))
+                            .foregroundStyle(TrackerTheme.ink)
 
-                Color.clear.frame(width: 44, height: 44)
-            }
-            .padding(.horizontal, 16)
-            .padding(.top, 10)
-            .padding(.bottom, 20)
+                        Text("Choose a utility")
+                            .font(.system(size: 13, weight: .semibold, design: .rounded))
+                            .foregroundStyle(TrackerTheme.muted)
+                    }
 
-            // Tools List
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 16) {
-                    gpsToolRow(
-                        title: "Compass",
-                        icon: AnyView(
-                            Image("ic_compass")
-                                .resizable()
-                                .scaledToFit()
-                        )
-                    )
-
-                    gpsToolRow(
-                        title: "Speedometer",
-                        icon: AnyView(
-                            Image("ic_speedometer")
-                                .resizable()
-                                .scaledToFit()
-                                .scaleEffect(1.4)
-                        )
-                    )
-
-                    gpsToolRow(
-                        title: "Level Meter",
-                        icon: AnyView(
-                            Image("ic_levelmeter")
-                                .resizable()
-                                .scaledToFit()
-                                .scaleEffect(1.35)
-                        )
-                    )
-
-                    gpsToolRow(
-                        title: "Area Codes",
-                        icon: AnyView(
-                            Image("ic_areacodes")
-                                .resizable()
-                                .scaledToFit()
-                        )
-                    )
-
-                    gpsToolRow(
-                        title: "Stopwatch",
-                        icon: AnyView(
-                            Image("ic_stopwatch")
-                                .resizable()
-                                .scaledToFit()
-                        )
-                    )
+                    Spacer()
+                    Color.clear.frame(width: 42, height: 42)
                 }
                 .padding(.horizontal, 20)
-                .padding(.bottom, 32)
+                .padding(.top, 12)
+                .padding(.bottom, 22)
+
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 14) {
+                        gpsToolRow(
+                            title: "Compass",
+                            icon: AnyView(
+                                Image("ic_compass")
+                                    .resizable()
+                                    .scaledToFit()
+                            )
+                        )
+
+                        gpsToolRow(
+                            title: "Speedometer",
+                            icon: AnyView(
+                                Image("ic_speedometer")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .scaleEffect(1.4)
+                            )
+                        )
+
+                        gpsToolRow(
+                            title: "Level Meter",
+                            icon: AnyView(
+                                Image("ic_levelmeter")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .scaleEffect(1.35)
+                            )
+                        )
+
+                        gpsToolRow(
+                            title: "Area Codes",
+                            icon: AnyView(
+                                Image("ic_areacodes")
+                                    .resizable()
+                                    .scaledToFit()
+                            )
+                        )
+
+                        gpsToolRow(
+                            title: "Stopwatch",
+                            icon: AnyView(
+                                Image("ic_stopwatch")
+                                    .resizable()
+                                    .scaledToFit()
+                            )
+                        )
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 32)
+                }
             }
         }
-        .background(Color.white.ignoresSafeArea())
         .navigationDestination(isPresented: $showCompass) {
             CompassScreen()
         }
@@ -398,26 +404,30 @@ struct GPSToolsSheet: View {
         } label: {
             HStack(spacing: 16) {
                 icon
-                    .frame(width: 32, height: 32)
+                    .frame(width: 36, height: 36)
+                    .padding(12)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
 
                 Text(LocalizedStringKey(title))
                     .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color.black.opacity(0.85))
+                    .foregroundStyle(TrackerTheme.ink)
 
                 Spacer()
 
-                Image(systemName: "arrow.right")
+                Image(systemName: "chevron.right")
                     .font(.system(size: 18, weight: .bold))
-                    .foregroundStyle(Color(red: 45 / 255, green: 130 / 255, blue: 245 / 255))
+                    .foregroundStyle(TrackerTheme.teal)
             }
-            .padding(.horizontal, 20)
-            .frame(height: 72)
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .padding(.horizontal, 16)
+            .frame(height: 78)
+            .background(TrackerTheme.panel)
+            .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .stroke(Color(red: 235 / 255, green: 238 / 255, blue: 245 / 255), lineWidth: 1.5)
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .stroke(TrackerTheme.stroke.opacity(0.9), lineWidth: 1)
             )
+            .shadow(color: TrackerTheme.navy.opacity(0.06), radius: 14, x: 0, y: 7)
         }
         .buttonStyle(.plain)
     }

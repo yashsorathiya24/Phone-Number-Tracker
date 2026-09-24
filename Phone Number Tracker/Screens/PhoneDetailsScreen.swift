@@ -39,139 +39,147 @@ struct PhoneDetailsScreen: View {
     
     var body: some View {
         ZStack {
-            Color(red: 247/255, green: 248/255, blue: 255/255)
+            TrackerTheme.background
                 .ignoresSafeArea()
             
             VStack(spacing: 24) {
-                // Header
                 HStack {
                     Button {
                         dismiss()
                     } label: {
-                        Image(systemName: "arrow.left")
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundStyle(Color.black)
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundStyle(TrackerTheme.ink)
+                            .frame(width: 42, height: 42)
+                            .background(Color.white.opacity(0.82))
+                            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
-                    .frame(width: 44, height: 44)
                     
                     Spacer()
                     
-                    Text("Details")
-                        .font(.system(size: 22, weight: .bold, design: .rounded))
-                        .foregroundStyle(Color.black)
+                    VStack(spacing: 2) {
+                        Text("Details")
+                            .font(.system(size: 24, weight: .heavy, design: .rounded))
+                            .foregroundStyle(TrackerTheme.ink)
+
+                        Text("Saved lookup")
+                            .font(.system(size: 13, weight: .semibold, design: .rounded))
+                            .foregroundStyle(TrackerTheme.muted)
+                    }
                     
                     Spacer()
                     
-                    Color.clear.frame(width: 44, height: 44)
+                    Color.clear.frame(width: 42, height: 42)
                 }
-                .padding(.horizontal, 16)
+                .padding(.horizontal, 20)
+                .padding(.top, 12)
                 
-                // Main Card
-                VStack(spacing: 0) {
-                    // Top colored header section of the card
+                VStack(spacing: 20) {
                     ZStack(alignment: .topTrailing) {
-                        // Light blue header background
-                        Rectangle()
-                            .fill(Color(red: 235/255, green: 240/255, blue: 255/255))
-                            .frame(height: 100)
-                            .clipShape(
-                                .rect(
-                                    topLeadingRadius: 24,
-                                    bottomLeadingRadius: 0,
-                                    bottomTrailingRadius: 0,
-                                    topTrailingRadius: 24
-                                )
-                            )
-                        
-                        // Favorite Star Button
+                        VStack(spacing: 16) {
+                            ZStack {
+                                Circle()
+                                    .fill(Color.white.opacity(0.16))
+                                    .frame(width: 132, height: 132)
+
+                                Circle()
+                                    .fill(Color.white)
+                                    .frame(width: 96, height: 96)
+
+                                Image(systemName: "person.fill")
+                                    .font(.system(size: 46, weight: .semibold))
+                                    .foregroundStyle(TrackerTheme.teal)
+                            }
+                            .padding(.top, 22)
+
+                            VStack(spacing: 8) {
+                                Text(displayName)
+                                    .font(.system(size: 22, weight: .heavy, design: .rounded))
+                                    .foregroundStyle(.white)
+                                    .padding(.horizontal, 20)
+                                    .multilineTextAlignment(.center)
+
+                                HStack(spacing: 8) {
+                                    Image(systemName: "mappin.and.ellipse")
+                                    Text(location)
+                                }
+                                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                                .foregroundStyle(Color.white.opacity(0.85))
+                                .lineLimit(1)
+                            }
+                            .padding(.bottom, 24)
+                        }
+                        .frame(maxWidth: .infinity)
+
                         Button {
                             withAnimation {
                                 favoritesManager.toggleFavorite(contact: favoriteModel)
                             }
                         } label: {
                             Image(systemName: isFavorite ? "star.fill" : "star.fill")
-                                .font(.system(size: 28))
-                                .foregroundStyle(isFavorite ? Color(red: 255/255, green: 195/255, blue: 0) : Color(white: 0.7))
+                                .font(.system(size: 23))
+                                .foregroundStyle(isFavorite ? TrackerTheme.amber : Color.white.opacity(0.54))
+                                .frame(width: 46, height: 46)
+                                .background(Color.white.opacity(0.15))
+                                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                         }
-                        .padding(20)
+                        .padding(18)
                     }
-                    
-                    // Avatar overlap
-                    ZStack {
-                        Circle()
-                            .fill(Color.white)
-                            .frame(width: 100, height: 100)
-                            .shadow(color: Color.black.opacity(0.05), radius: 10)
-                        
-                        Circle()
-                            .fill(Color(red: 240/255, green: 245/255, blue: 255/255))
-                            .frame(width: 80, height: 80)
-                        
-                        Image(systemName: "person.fill")
-                            .font(.system(size: 44))
-                            .foregroundStyle(Color.blue)
-                    }
-                    .offset(y: -50)
-                    .padding(.bottom, -30)
-                    
-                    // Title and Info
-                    Text(displayName)
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .foregroundStyle(Color.black)
-                        .padding(.horizontal, 20)
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 20)
-                    
-                    Divider()
-                        .padding(.horizontal, 30)
-                        .padding(.bottom, 20)
-                    
-                    // Details List
+                    .background(
+                        LinearGradient(
+                            colors: [
+                                TrackerTheme.navy,
+                                TrackerTheme.indigo,
+                                TrackerTheme.teal
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+
                     VStack(spacing: 24) {
                         detailRow(icon: "phone.circle.fill", title: "Mobile", value: phoneNumber)
                         detailRow(icon: "mappin.circle.fill", title: "Location", value: location)
-                        detailRow(icon: "globe", title: "Country Code", value: countryCode) // Using globe as a proxy for the ISO icon
+                        detailRow(icon: "globe", title: "Country Code", value: countryCode)
                         detailRow(icon: "phone.fill", title: "Carrier", value: carrier)
                     }
-                    .padding(.horizontal, 30)
-                    .padding(.bottom, 30)
+                    .padding(22)
                 }
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 24))
-                .shadow(color: Color.black.opacity(0.05), radius: 15, x: 0, y: 10)
+                .background(Color.white.opacity(0.9))
+                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                .shadow(color: TrackerTheme.navy.opacity(0.08), radius: 18, x: 0, y: 10)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 24)
-                        .stroke(Color.gray.opacity(0.1), lineWidth: 1)
+                    RoundedRectangle(cornerRadius: 30, style: .continuous)
+                        .stroke(TrackerTheme.stroke.opacity(0.9), lineWidth: 1)
                 )
                 .padding(.horizontal, 20)
                 
-                // Bottom Actions Card
                 HStack(spacing: 16) {
-                    actionButton(title: "Call", color: Color(red: 20/255, green: 200/255, blue: 100/255)) {
+                    actionButton(title: "Call", icon: "phone.fill", color: TrackerTheme.teal) {
                         let formattedNumber = phoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
                         if let url = URL(string: "tel://\(formattedNumber)") {
                             UIApplication.shared.open(url)
                         }
                     }
-                    actionButton(title: "SMS", color: Color(red: 250/255, green: 180/255, blue: 20/255)) {
+                    actionButton(title: "SMS", icon: "message.fill", color: TrackerTheme.amber) {
                         let formattedNumber = phoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
                         if let url = URL(string: "sms://\(formattedNumber)") {
                             UIApplication.shared.open(url)
                         }
                     }
-                    actionButton(title: "Add", color: Color(red: 80/255, green: 150/255, blue: 250/255)) {
+                    actionButton(title: "Add", icon: "person.badge.plus", color: TrackerTheme.indigo) {
                         showAddContact = true
                     }
                 }
-                .padding(.horizontal, 20)
-                .padding(.vertical, 20)
+                .padding(16)
                 .frame(maxWidth: .infinity)
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 24))
-                .shadow(color: Color.black.opacity(0.05), radius: 15, x: 0, y: 10)
+                .background(Color.white.opacity(0.9))
+                .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
+                .shadow(color: TrackerTheme.navy.opacity(0.06), radius: 16, x: 0, y: 8)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 24)
-                        .stroke(Color.gray.opacity(0.1), lineWidth: 1)
+                    RoundedRectangle(cornerRadius: 26, style: .continuous)
+                        .stroke(TrackerTheme.stroke.opacity(0.9), lineWidth: 1)
                 )
                 .padding(.horizontal, 20)
                 
@@ -186,35 +194,43 @@ struct PhoneDetailsScreen: View {
     private func detailRow(icon: String, title: String, value: String) -> some View {
         HStack(spacing: 16) {
             Image(systemName: icon)
-                .font(.system(size: 24))
-                .foregroundStyle(Color(red: 80/255, green: 120/255, blue: 220/255))
-                .frame(width: 32)
+                .font(.system(size: 22))
+                .foregroundStyle(TrackerTheme.teal)
+                .frame(width: 44, height: 44)
+                .background(Color(red: 236 / 255, green: 246 / 255, blue: 246 / 255))
+                .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .font(.system(size: 13, weight: .semibold, design: .rounded))
-                    .foregroundStyle(Color.gray)
+                    .foregroundStyle(TrackerTheme.muted)
                 
                 Text(value)
                     .font(.system(size: 17, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color.black)
+                    .foregroundStyle(TrackerTheme.ink)
             }
             
             Spacer()
         }
     }
     
-    private func actionButton(title: String, color: Color, action: @escaping () -> Void) -> some View {
+    private func actionButton(title: String, icon: String, color: Color, action: @escaping () -> Void) -> some View {
         Button {
             action()
         } label: {
-            Text(title)
-                .font(.system(size: 16, weight: .bold, design: .rounded))
-                .foregroundStyle(.white)
+            VStack(spacing: 8) {
+                Image(systemName: icon)
+                    .font(.system(size: 18, weight: .bold))
+
+                Text(title)
+                    .font(.system(size: 14, weight: .bold, design: .rounded))
+            }
+            .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
-                .frame(height: 50)
+                .frame(height: 64)
                 .background(color)
-                .clipShape(Capsule())
+                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
+        .buttonStyle(.plain)
     }
 }

@@ -56,81 +56,95 @@ struct NearbyPlacesScreen: View {
     ]
     
     var body: some View {
-        VStack(spacing: 0) {
-            // Header
-            HStack {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "arrow.left")
-                        .font(.system(size: 20, weight: .bold))
-                        .foregroundStyle(Color.black)
+        ZStack {
+            TrackerTheme.background
+                .ignoresSafeArea()
+
+            VStack(spacing: 0) {
+                HStack {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundStyle(TrackerTheme.ink)
+                            .frame(width: 42, height: 42)
+                            .background(Color.white.opacity(0.82))
+                            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    }
+                    
+                    Spacer()
+                    
+                    VStack(spacing: 2) {
+                        Text("Near By Places")
+                            .font(.system(size: 24, weight: .heavy, design: .rounded))
+                            .foregroundStyle(TrackerTheme.ink)
+
+                        Text("Find essentials around you")
+                            .font(.system(size: 13, weight: .semibold, design: .rounded))
+                            .foregroundStyle(TrackerTheme.muted)
+                    }
+
+                    Spacer()
+                    Color.clear.frame(width: 42, height: 42)
                 }
-                .frame(width: 44, height: 44)
+                .padding(.horizontal, 20)
+                .padding(.top, 12)
+                .padding(.bottom, 18)
                 
-                Spacer()
-                
-                Text("Near By Places")
-                    .font(.system(size: 22, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color(red: 40 / 255, green: 42 / 255, blue: 50 / 255))
-                    .offset(x: -8) // visual center
-                
-                Spacer()
-                
-                Color.clear.frame(width: 44, height: 44)
-            }
-            .padding(.horizontal, 16)
-            .padding(.top, 10)
-            .padding(.bottom, 16)
-            
-            // List
-            ScrollView(.vertical, showsIndicators: false) {
-                LazyVStack(alignment: .leading, spacing: 24) {
-                    ForEach(categories) { category in
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text(LocalizedStringKey(category.name))
-                                .font(.system(size: 20, weight: .bold, design: .rounded))
-                                .foregroundStyle(Color.black)
-                                .padding(.horizontal, 4)
-                            
-                            VStack(spacing: 12) {
-                                ForEach(category.items, id: \.name) { item in
-                                    placeRow(item: item)
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVStack(alignment: .leading, spacing: 22) {
+                        ForEach(categories) { category in
+                            VStack(alignment: .leading, spacing: 12) {
+                                Text(LocalizedStringKey(category.name))
+                                    .font(.system(size: 19, weight: .heavy, design: .rounded))
+                                    .foregroundStyle(TrackerTheme.ink)
+                                    .padding(.horizontal, 4)
+                                
+                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                                    ForEach(category.items, id: \.name) { item in
+                                        placeRow(item: item)
+                                    }
                                 }
                             }
                         }
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 32)
                 }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 32)
             }
         }
-        .background(Color.white.ignoresSafeArea())
     }
     
     private func placeRow(item: (name: String, emoji: String)) -> some View {
         Button {
             openMap(for: item.name)
         } label: {
-            HStack(spacing: 16) {
+            VStack(alignment: .leading, spacing: 12) {
                 Text(item.emoji)
-                    .font(.system(size: 28))
-                    .frame(width: 40, height: 40)
+                    .font(.system(size: 26))
+                    .frame(width: 46, height: 46)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
                 
                 Text(LocalizedStringKey(item.name))
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color.black.opacity(0.85))
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
+                    .foregroundStyle(TrackerTheme.ink)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
                 
                 Spacer()
             }
-            .padding(.horizontal, 20)
-            .frame(height: 72)
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(height: 126)
+            .background(Color.white.opacity(0.9))
+            .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .stroke(Color(red: 235 / 255, green: 238 / 255, blue: 245 / 255), lineWidth: 1.5)
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .stroke(TrackerTheme.stroke.opacity(0.85), lineWidth: 1)
             )
+            .shadow(color: TrackerTheme.navy.opacity(0.05), radius: 12, x: 0, y: 6)
         }
         .buttonStyle(.plain)
     }

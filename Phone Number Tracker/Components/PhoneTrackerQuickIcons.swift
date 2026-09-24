@@ -245,44 +245,66 @@ struct GPSTools3DIcon: View {
 struct QuickToolCard<IconView: View>: View {
     let icon: IconView
     let title: LocalizedStringKey
-    let subtitle: LocalizedStringKey
+    let accent: Color
     let action: () -> Void
 
     var body: some View {
         Button(action: action) {
-            VStack(spacing: 12) {
-                icon
-                    .padding(.top, 6)
+            HStack(spacing: 16) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .fill(accent.opacity(0.12))
+                        .frame(width: 66, height: 66)
 
-                VStack(spacing: 6) {
-                    Text(title)
-                        .font(.system(size: 15, weight: .bold, design: .rounded))
-                        .foregroundStyle(Color(red: 22 / 255, green: 24 / 255, blue: 28 / 255))
-                        .multilineTextAlignment(.center)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
-
-                    Text(subtitle)
-                        .font(.system(size: 12, weight: .regular, design: .rounded))
-                        .foregroundStyle(Color(red: 120 / 255, green: 124 / 255, blue: 135 / 255))
-                        .multilineTextAlignment(.center)
-                        .lineLimit(3)
-                        .fixedSize(horizontal: false, vertical: true)
+                    icon
                 }
 
-                Spacer(minLength: 0)
+                Text(title)
+                    .font(.system(size: 19, weight: .heavy, design: .rounded))
+                    .foregroundStyle(TrackerTheme.ink)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 16, weight: .heavy))
+                    .foregroundStyle(.white)
+                    .frame(width: 34, height: 34)
+                    .background(accent)
+                    .clipShape(Circle())
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 16)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 14)
             .frame(maxWidth: .infinity)
-            .frame(height: 172)
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(Color(red: 226 / 255, green: 232 / 255, blue: 240 / 255), lineWidth: 1.2)
+            .frame(minHeight: 94)
+            .background(
+                ZStack {
+                    Color.white.opacity(0.96)
+                    LinearGradient(
+                        colors: [
+                            accent.opacity(0.10),
+                            Color.white.opacity(0.0)
+                        ],
+                        startPoint: .topTrailing,
+                        endPoint: .bottomLeading
+                    )
+                }
             )
-            .shadow(color: Color.black.opacity(0.02), radius: 6, x: 0, y: 3)
+            .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .stroke(accent.opacity(0.24), lineWidth: 1)
+            )
+            .shadow(color: accent.opacity(0.10), radius: 14, x: 0, y: 7)
+            .overlay(
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .stroke(Color.white.opacity(0.7), lineWidth: 1)
+                    .padding(1)
+            )
+            .contentShape(
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+            )
         }
         .buttonStyle(.plain)
     }

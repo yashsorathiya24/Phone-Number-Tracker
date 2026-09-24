@@ -24,29 +24,46 @@ struct PhoneLocatorScreen: View {
     
     var body: some View {
         ZStack {
-            // Background Map
             Map(position: $cameraPosition) {
                 UserAnnotation()
             }
             .ignoresSafeArea()
+
+            LinearGradient(
+                colors: [
+                    TrackerTheme.navy.opacity(0.32),
+                    Color.clear,
+                    TrackerTheme.teal.opacity(0.14)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
             
             VStack(spacing: 0) {
-                // Header
                 HStack {
                     Button {
                         dismiss()
                     } label: {
-                        Image(systemName: "arrow.left")
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundStyle(Color.black)
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundStyle(.white)
+                            .frame(width: 42, height: 42)
+                            .background(.ultraThinMaterial)
+                            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
                     }
-                    .frame(width: 44, height: 44)
                     
                     Spacer()
                     
-                    Text("Phone Locator")
-                        .font(.system(size: 22, weight: .bold, design: .rounded))
-                        .foregroundStyle(Color(red: 40 / 255, green: 42 / 255, blue: 50 / 255))
+                    VStack(spacing: 2) {
+                        Text("Phone Locator")
+                            .font(.system(size: 22, weight: .heavy, design: .rounded))
+                            .foregroundStyle(.white)
+
+                        Text("Search by number")
+                            .font(.system(size: 12, weight: .semibold, design: .rounded))
+                            .foregroundStyle(Color.white.opacity(0.78))
+                    }
                     
                     Spacer()
                     
@@ -57,90 +74,98 @@ struct PhoneLocatorScreen: View {
                     } label: {
                         Image(systemName: "info.circle")
                             .font(.system(size: 22))
-                            .foregroundStyle(Color.black)
-                    }
-                    .frame(width: 44, height: 44)
-                }
-                .padding(.horizontal, 16)
-                .padding(.top, 10)
-                .padding(.bottom, 16)
-                .background(Color(white: 0.94).opacity(0.95))
-                
-                // Search Bar
-                HStack(spacing: 0) {
-                    Button {
-                        showCountryPicker = true
-                    } label: {
-                        HStack(spacing: 6) {
-                            Text(countryService.selectedCountry.flag)
-                                .font(.system(size: 20))
-                            Text("+\(countryService.selectedCountry.callingCodes.first ?? "")")
-                                .font(.system(size: 16, design: .rounded))
-                                .foregroundStyle(Color.black)
-                            Image(systemName: "arrowtriangle.down.fill")
-                                .font(.system(size: 10))
-                                .foregroundStyle(Color.blue)
-                        }
-                        .padding(.horizontal, 12)
-                        .frame(height: 50)
-                    }
-                    
-                    Divider()
-                        .frame(height: 24)
-                        .background(Color.gray.opacity(0.3))
-                    
-                    TextField("Search Phone Number", text: $phoneNumber)
-                        .font(.system(size: 16, design: .rounded))
-                        .foregroundStyle(Color.black)
-                        .padding(.horizontal, 12)
-                        .frame(height: 50)
-                    
-                    Button {
-                        startSearch()
-                    } label: {
-                        Image(systemName: "magnifyingglass")
-                            .font(.system(size: 20))
-                            .foregroundStyle(Color(red: 160 / 255, green: 170 / 255, blue: 210 / 255))
-                            .padding(.trailing, 16)
+                            .foregroundStyle(.white)
+                            .frame(width: 42, height: 42)
+                            .background(.ultraThinMaterial)
+                            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
                     }
                 }
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.gray.opacity(0.15), lineWidth: 1)
-                )
                 .padding(.horizontal, 20)
                 .padding(.top, 12)
+                .padding(.bottom, 20)
                 
-                // Result Card (Always visible directly below search)
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("Enter a mobile number")
+                        .font(.system(size: 13, weight: .bold, design: .rounded))
+                        .foregroundStyle(TrackerTheme.teal)
+                        .textCase(.uppercase)
+
+                    HStack(spacing: 10) {
+                        Button {
+                            showCountryPicker = true
+                        } label: {
+                            HStack(spacing: 6) {
+                                Text(countryService.selectedCountry.flag)
+                                    .font(.system(size: 20))
+                                Text("+\(countryService.selectedCountry.callingCodes.first ?? "")")
+                                    .font(.system(size: 16, weight: .bold, design: .rounded))
+                                    .foregroundStyle(TrackerTheme.ink)
+                                Image(systemName: "chevron.down")
+                                    .font(.system(size: 11, weight: .bold))
+                                    .foregroundStyle(TrackerTheme.teal)
+                            }
+                            .padding(.horizontal, 12)
+                            .frame(height: 48)
+                            .background(Color(red: 236 / 255, green: 246 / 255, blue: 246 / 255))
+                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        }
+
+                        TextField("Search Phone Number", text: $phoneNumber)
+                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .foregroundStyle(TrackerTheme.ink)
+                            .keyboardType(.phonePad)
+
+                        Button {
+                            startSearch()
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                                .font(.system(size: 18, weight: .bold))
+                                .foregroundStyle(.white)
+                                .frame(width: 42, height: 42)
+                                .background(TrackerTheme.teal)
+                                .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                        }
+                    }
+                }
+                .padding(16)
+                .background(.regularMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 26, style: .continuous)
+                        .stroke(Color.white.opacity(0.7), lineWidth: 1)
+                )
+                .padding(.horizontal, 20)
+                
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Carrier")
-                            .font(.system(size: 14, weight: .semibold, design: .rounded))
-                            .foregroundStyle(Color.black)
+                       	    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                            .foregroundStyle(TrackerTheme.muted)
                         Text("Unknown")
                             .font(.system(size: 16, weight: .bold, design: .rounded))
-                            .foregroundStyle(Color(red: 45 / 255, green: 110 / 255, blue: 210 / 255))
+                            .foregroundStyle(TrackerTheme.ink)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Location")
                             .font(.system(size: 14, weight: .semibold, design: .rounded))
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(TrackerTheme.muted)
                         Text(countryService.selectedCountry.name)
                             .font(.system(size: 16, weight: .bold, design: .rounded))
-                            .foregroundStyle(Color(red: 45 / 255, green: 110 / 255, blue: 210 / 255))
+                            .foregroundStyle(TrackerTheme.ink)
                             .lineLimit(1)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                .padding(.horizontal, 24)
-                .padding(.vertical, 20)
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 24))
-                .shadow(color: Color.black.opacity(0.1), radius: 10, y: 5)
+                .padding(20)
+                .background(Color.white.opacity(0.92))
+                .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 24, style: .continuous)
+                        .stroke(Color.white.opacity(0.7), lineWidth: 1)
+                )
+                .shadow(color: TrackerTheme.navy.opacity(0.12), radius: 18, y: 8)
                 .padding(.horizontal, 20)
                 .padding(.top, 16)
                 
@@ -160,12 +185,12 @@ struct PhoneLocatorScreen: View {
                 VStack(spacing: 20) {
                     Text("Phone Locator")
                         .font(.system(size: 22, weight: .semibold, design: .rounded))
-                        .foregroundStyle(Color.black)
+                        .foregroundStyle(TrackerTheme.ink)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     Text("Only Phone numbers starting with the proper country code and number format will have their information retrieved.")
                         .font(.system(size: 16, design: .rounded))
-                        .foregroundStyle(Color(white: 0.2))
+                        .foregroundStyle(TrackerTheme.muted)
                         .lineSpacing(4)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
@@ -176,14 +201,14 @@ struct PhoneLocatorScreen: View {
                     } label: {
                         Text("OK")
                             .font(.system(size: 16, weight: .semibold, design: .rounded))
-                            .foregroundStyle(Color(red: 100 / 255, green: 80 / 255, blue: 150 / 255)) // purple
+                            .foregroundStyle(TrackerTheme.teal)
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.top, 10)
                 }
                 .padding(24)
-                .background(Color(red: 242 / 255, green: 238 / 255, blue: 250 / 255)) // Light purplish background matching screenshot
-                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
                 .padding(.horizontal, 40)
                 .shadow(color: Color.black.opacity(0.15), radius: 20)
                 .transition(.scale.combined(with: .opacity))

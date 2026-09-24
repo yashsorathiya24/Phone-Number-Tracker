@@ -13,14 +13,13 @@ struct OnboardingPageView: View {
     var body: some View {
         VStack(spacing: 0) {
             visual
-                .padding(.top, 28)
+                .padding(.top, 34)
 
             Spacer(minLength: 36)
 
             textBlock
                 .padding(.horizontal, 24)
-
-//            Spacer(minLength: 10)
+                .padding(.bottom, 22)
 
             controls
                 .padding(.horizontal, 22)
@@ -33,23 +32,31 @@ struct OnboardingPageView: View {
     private var textBlock: some View {
         VStack(spacing: 10) {
             Text(LocalizedStringKey(page.title))
-                .font(.system(size: 32, weight: .bold))
-                .foregroundStyle(Color(red: 18 / 255, green: 18 / 255, blue: 22 / 255))
+                .font(.system(size: 31, weight: .heavy, design: .rounded))
+                .foregroundStyle(TrackerTheme.ink)
                 .multilineTextAlignment(.center)
                 .lineSpacing(2)
                 .minimumScaleFactor(0.65)
                 .lineLimit(3)
-                .frame(maxWidth: 320)
+                .frame(maxWidth: 330)
 
             Text(LocalizedStringKey(page.subtitle))
-                .font(.system(size: 18, weight: .medium))
-                .foregroundStyle(Color(red: 88 / 255, green: 92 / 255, blue: 102 / 255))
+                .font(.system(size: 17, weight: .semibold, design: .rounded))
+                .foregroundStyle(TrackerTheme.muted)
                 .multilineTextAlignment(.center)
                 .lineSpacing(3)
                 .minimumScaleFactor(0.7)
                 .lineLimit(5)
-                .frame(maxWidth: 310)
+                .frame(maxWidth: 320)
         }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 18)
+        .background(Color.white.opacity(0.72))
+        .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 26, style: .continuous)
+                .stroke(TrackerTheme.stroke.opacity(0.55), lineWidth: 1)
+        )
     }
 
     @ViewBuilder

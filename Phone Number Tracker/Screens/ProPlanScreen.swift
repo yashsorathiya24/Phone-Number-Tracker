@@ -18,7 +18,8 @@ struct ProPlanScreen: View {
 
     var body: some View {
         ZStack(alignment: .top) {
-            Color.white.ignoresSafeArea()
+            TrackerTheme.background
+                .ignoresSafeArea()
 
             ScrollView(.vertical, showsIndicators: false) {
                 ZStack(alignment: .topLeading) {
@@ -62,9 +63,13 @@ struct ProPlanScreen: View {
                     .padding(.bottom, 36)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color.white)
+                .background(Color.white.opacity(0.94))
                 .clipShape(
                     RoundedRectangle(cornerRadius: 30, style: .continuous)
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 30, style: .continuous)
+                        .stroke(TrackerTheme.stroke.opacity(0.7), lineWidth: 1)
                 )
                 .padding(.top, -30)
                     }
@@ -127,13 +132,20 @@ struct ProPlanScreen: View {
             featureRow("Early Access to New Features")
             featureRow("Premium Support 24/7")
         }
+        .padding(18)
+        .background(Color.white.opacity(0.78))
+        .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .stroke(TrackerTheme.stroke.opacity(0.75), lineWidth: 1)
+        )
     }
 
     private func featureRow(_ text: String) -> some View {
         HStack(spacing: 14) {
             ZStack {
                 Circle()
-                    .fill(Color(red: 45 / 255, green: 130 / 255, blue: 245 / 255))
+                    .fill(TrackerTheme.teal)
                     .frame(width: 26, height: 26)
                 Image(systemName: "checkmark")
                     .font(.system(size: 12, weight: .bold))
@@ -141,7 +153,7 @@ struct ProPlanScreen: View {
             }
             Text(LocalizedStringKey(text))
                 .font(.system(size: 16, weight: .semibold, design: .rounded))
-                .foregroundStyle(Color(red: 22 / 255, green: 24 / 255, blue: 30 / 255))
+                .foregroundStyle(TrackerTheme.ink)
         }
     }
 
@@ -157,7 +169,7 @@ struct ProPlanScreen: View {
                     .foregroundStyle(.white)
                     .padding(.horizontal, 14)
                     .padding(.vertical, 6)
-                    .background(Color(red: 40 / 255, green: 175 / 255, blue: 100 / 255))
+                    .background(TrackerTheme.teal)
                     .clipShape(Capsule())
                 Spacer()
             }
@@ -221,20 +233,20 @@ struct ProPlanScreen: View {
                         .font(.system(size: isCenter ? 15 : 14, weight: .bold, design: .rounded))
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
-                        .foregroundStyle(isCenter ? Color(red: 40 / 255, green: 120 / 255, blue: 235 / 255) : Color(red: 22 / 255, green: 24 / 255, blue: 30 / 255))
+                        .foregroundStyle(isCenter ? TrackerTheme.teal : TrackerTheme.ink)
 
                     Text(LocalizedStringKey(subtitle))
                         .font(.system(size: 10.5, weight: .regular, design: .rounded))
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
-                        .foregroundStyle(Color(red: 120 / 255, green: 124 / 255, blue: 135 / 255))
+                        .foregroundStyle(TrackerTheme.muted)
                         .lineSpacing(1)
 
                     Spacer()
 
                     Text(LocalizedStringKey(price))
                         .font(.system(size: isCenter ? 24 : 20, weight: .heavy, design: .rounded))
-                        .foregroundStyle(isCenter ? Color(red: 40 / 255, green: 120 / 255, blue: 235 / 255) : Color(red: 22 / 255, green: 24 / 255, blue: 30 / 255))
+                        .foregroundStyle(isCenter ? TrackerTheme.teal : TrackerTheme.ink)
 
                     if let orig = originalPrice {
                         Text(LocalizedStringKey(orig))
@@ -247,18 +259,18 @@ struct ProPlanScreen: View {
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 156)
-                .background(Color.white)
+                .background(Color.white.opacity(0.96))
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .overlay(
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
                         .stroke(
                             isSelected
-                                ? Color(red: 40 / 255, green: 120 / 255, blue: 235 / 255)
-                                : Color(red: 220 / 255, green: 224 / 255, blue: 232 / 255),
+                                ? TrackerTheme.teal
+                                : TrackerTheme.stroke,
                             lineWidth: isSelected ? 2 : 1.2
                         )
                 )
-                .shadow(color: isSelected ? Color.blue.opacity(0.12) : Color.clear, radius: 6, x: 0, y: 3)
+                .shadow(color: isSelected ? TrackerTheme.teal.opacity(0.14) : Color.clear, radius: 8, x: 0, y: 4)
 
                 // Badge pill at top
                 if let badge = badge {
@@ -267,7 +279,7 @@ struct ProPlanScreen: View {
                         .foregroundStyle(.white)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
-                        .background(Color(red: 40 / 255, green: 120 / 255, blue: 235 / 255))
+                        .background(TrackerTheme.teal)
                         .clipShape(Capsule())
                         .offset(y: -14)
                 }
@@ -294,15 +306,16 @@ struct ProPlanScreen: View {
             .background(
                 LinearGradient(
                     colors: [
-                        Color(red: 70 / 255, green: 155 / 255, blue: 255 / 255),
-                        Color(red: 35 / 255, green: 105 / 255, blue: 245 / 255)
+                        TrackerTheme.navy,
+                        TrackerTheme.indigo,
+                        TrackerTheme.teal
                     ],
                     startPoint: .leading,
                     endPoint: .trailing
                 )
             )
             .clipShape(Capsule())
-            .shadow(color: Color.blue.opacity(0.30), radius: 10, x: 0, y: 5)
+            .shadow(color: TrackerTheme.navy.opacity(0.22), radius: 12, x: 0, y: 6)
         }
         .buttonStyle(.plain)
     }
@@ -317,8 +330,9 @@ private struct Slide0View: View {
         ZStack {
             LinearGradient(
                 colors: [
-                    Color(red: 90 / 255, green: 150 / 255, blue: 245 / 255),
-                    Color(red: 55 / 255, green: 115 / 255, blue: 240 / 255)
+                    TrackerTheme.navy,
+                    TrackerTheme.indigo,
+                    TrackerTheme.teal
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -380,8 +394,9 @@ private struct Slide1View: View {
         ZStack {
             LinearGradient(
                 colors: [
-                    Color(red: 80 / 255, green: 185 / 255, blue: 115 / 255),
-                    Color(red: 45 / 255, green: 155 / 255, blue: 80 / 255)
+                    TrackerTheme.teal,
+                    TrackerTheme.indigo,
+                    TrackerTheme.navy
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -435,8 +450,9 @@ private struct Slide2View: View {
         ZStack {
             LinearGradient(
                 colors: [
-                    Color(red: 255 / 255, green: 115 / 255, blue: 70 / 255),
-                    Color(red: 240 / 255, green: 70 / 255, blue: 55 / 255)
+                    TrackerTheme.coral,
+                    TrackerTheme.indigo,
+                    TrackerTheme.navy
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
